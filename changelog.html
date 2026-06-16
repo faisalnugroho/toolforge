@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — ToolForge</title>
+  <meta name="description" content="Every update, new tool, and improvement to ToolForge. We show our work — last 6 months of changes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolforge.io/changelog.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+  <style>
+    .changelog-entry {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: var(--space-5);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .changelog-date {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      padding-top: 2px;
+    }
+    .changelog-version {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      background: rgba(10, 114, 239, 0.08);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      margin-right: var(--space-2);
+    }
+    .changelog-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: var(--space-3);
+      letter-spacing: -0.5px;
+    }
+    .changelog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .changelog-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .changelog-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      flex-shrink: 0;
+      min-width: 70px;
+      text-align: center;
+      margin-top: 1px;
+    }
+    .tag-new { background: rgba(16, 185, 129, 0.1); color: #059669; }
+    .tag-update { background: rgba(10, 114, 239, 0.1); color: var(--accent); }
+    .tag-fix { background: rgba(245, 158, 11, 0.1); color: #b45309; }
+    .tag-design { background: rgba(168, 85, 247, 0.1); color: #7c3aed; }
+    @media (max-width: 640px) {
+      .changelog-entry { grid-template-columns: 1fr; gap: var(--space-2); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">T</div>
+        ToolForge
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="changelog.html" class="nav-link active">📝 Changelog</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">Explore Tools</a>
+        <button class="mobile-menu-btn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-5); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);">
+        <a href="index.html">Home</a> <span>/</span> <span>Changelog</span>
+      </nav>
+      <h1 style="font-size: clamp(40px, 6vw, 64px); font-weight: 600; letter-spacing: -2px; line-height: 1.05; margin-bottom: var(--space-3);">📝 Changelog</h1>
+      <p style="font-size: 18px; color: var(--text-secondary); max-width: 600px; line-height: 1.5;">Every update to ToolForge. New tools, redesigned pages, bug fixes, and the small stuff that makes the site better.</p>
+      <div style="margin-top: var(--space-4); display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#v2-5" class="btn btn-secondary btn-sm">v2.5 (current)</a>
+        <a href="rss.xml" class="btn btn-secondary btn-sm">📡 RSS</a>
+        <a href="mailto:hello@toolforge.io?subject=Changelog%20feedback" class="btn btn-secondary btn-sm">💬 Feedback</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+
+      <!-- v2.5 -->
+      <article class="changelog-entry" id="v2-5">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">June 16, 2026</div>
+          <div>3 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.5</span> Professional Grade Upgrade</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">A complete overhaul of the site experience. We're now a 192-page directory, not a listicle farm.</p>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-design">Design</span>
+              <span>New homepage with live product mockup, real stats (84 tools, 30 reviews, 49 comparisons), and an honest FAQ section. Replaced fake trust bar with real metrics.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Added 404 page with smart redirects to popular categories. Now you can recover from broken links.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>PWA support — install ToolForge as an app on iOS, Android, and desktop. Works offline.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">SEO</span>
+              <span>JSON-LD structured data on every page: Organization, WebSite, Article, SoftwareApplication, FAQPage, ItemList. We're now Google-rich-result eligible.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">UX</span>
+              <span>Back-to-top button, breadcrumb navigation, mega menu for tools, cookie consent banner, scroll-reveal animations, reading progress bar.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">Trust</span>
+              <span>Removed fabricated "50,000+ creators" and "14,000+ subscribers" stats. Now showing real counts and a transparency report.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>This changelog — public update history. Subscribe via <a href="rss.xml">RSS</a> to never miss a release.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v2.4 -->
+      <article class="changelog-entry" id="v2-4">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">June 14, 2026</div>
+          <div>5 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.4</span> Content Sprint #3</h3>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Added 20 new tool review pages including Claude 3.7, GPT-5, Gemini 2.5 Pro, Manus AI, v0, Bolt, ElevenLabs v3, and 13 more.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Added 15 new comparison pages (Cursor vs Copilot, ChatGPT vs Claude, etc.) and 8 new "best tools for X" guides.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">Update</span>
+              <span>Updated all 2026 pricing across every review. Free tier limits now shown on every card.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Added Tool Picker (4-question wizard) and ROI Calculator interactive tools.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-fix">Fix</span>
+              <span>Fixed broken internal links across blog posts.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v2.3 -->
+      <article class="changelog-entry" id="v2-3">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">June 9, 2026</div>
+          <div>10 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.3</span> Stack Quiz Launch</h3>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Launched the AI Stack Quiz — 6 deep questions, personalized stack recommendations with reasoning.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">Update</span>
+              <span>IndexNow ping for new URLs. Faster indexing than waiting for Google crawl.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-design">Design</span>
+              <span>Category pages redesigned with hero search and color-coded cards.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v2.2 -->
+      <article class="changelog-entry" id="v2-2">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">June 4, 2026</div>
+          <div>15 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.2</span> Mega Pages &amp; Compare Hub</h3>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Launched 4 mega pages: Best AI Tools 2026, Best Free AI Tools, Best by Budget, Best for Podcasters/Video Editors.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Added 36 side-by-side comparison pages across all major tools.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-update">SEO</span>
+              <span>Improved internal linking — every review links to 3+ related pages.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v2.1 -->
+      <article class="changelog-entry" id="v2-1">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">May 30, 2026</div>
+          <div>20 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.1</span> Search &amp; Site Search</h3>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Full-text search across all 192 pages. Try it: <a href="search.html">search.html</a></span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>RSS feed for blog (<a href="rss.xml">rss.xml</a>). Subscribe in your reader.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-fix">Fix</span>
+              <span>Dark mode polish — fixed contrast on category badges.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v2.0 -->
+      <article class="changelog-entry" id="v2-0">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">May 24, 2026</div>
+          <div>26 days ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v2.0</span> The Big Rewrite</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">ToolForge went from a 12-page blog to a 100+ page curated directory. New design system, new tools, new everything.</p>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>New Vercel-clean + Linear-dark hybrid design system. Geist font. CSS variables for full theming.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Light + dark mode with system preference detection.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Filterable browse page with category, price, and use-case filters.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>20+ blog posts covering AI tools for beginners, professionals, and specific industries.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-design">Design</span>
+              <span>Sticky nav, frosted-glass backdrop, smooth scroll, scroll-reveal animations.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- v1.0 -->
+      <article class="changelog-entry" id="v1-0">
+        <div class="changelog-date">
+          <div style="font-weight: 600; color: var(--text-primary);">May 1, 2026</div>
+          <div>~7 weeks ago</div>
+        </div>
+        <div class="changelog-content">
+          <h3><span class="changelog-version">v1.0</span> Initial Launch</h3>
+          <div class="changelog-list">
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>First version of ToolForge. 12 pages, 8 tool reviews, basic design.</span>
+            </div>
+            <div class="changelog-item">
+              <span class="changelog-tag tag-new">New</span>
+              <span>Deployed to Netlify at <a href="https://toolforge-io.netlify.app">toolforge-io.netlify.app</a></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div style="text-align: center; margin-top: var(--space-7); padding: var(--space-5); background: var(--bg-elevated); border-radius: var(--radius-lg);">
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Want to be notified when we ship?</p>
+        <form class="newsletter-form" id="newsletter-form" style="max-width: 420px; margin: 0 auto;">
+          <input type="email" class="newsletter-input" placeholder="you@startup.com" required>
+          <button type="submit" class="newsletter-submit">Subscribe</button>
+        </form>
+        <p style="font-size: 12px; color: var(--text-tertiary); margin-top: var(--space-3);">Or follow via <a href="rss.xml">RSS</a> · <a href="https://twitter.com/toolforgeio">Twitter</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© <span class="current-year">2026</span> ToolForge.</div>
+        <div><a href="changelog.html" style="color: var(--text-tertiary);">v2.5</a> · Last updated June 16, 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

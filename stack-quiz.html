@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your AI Stack in 2 Minutes — Free Quiz | ToolForge</title>
+  <meta name="description" content="Take our 2-minute quiz to find the perfect AI tool stack for your role, budget, and workflow. Get personalized recommendations.">
+  <meta property="og:title" content="Find Your AI Stack in 2 Minutes — Free Quiz">
+  <meta property="og:description" content="Take our 2-minute quiz to find the perfect AI tool stack for your role, budget, and workflow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolforge.io/stack-quiz.html">
+  <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://toolforge.io/stack-quiz.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+  <style>
+    .quiz-container { max-width: 700px; margin: 0 auto; }
+    .quiz-progress { height: 6px; background: var(--bg-elevated); border-radius: 3px; margin-bottom: var(--space-6); overflow: hidden; }
+    .quiz-progress-bar { height: 100%; background: linear-gradient(90deg, #0a72ef, #0ea5e9); transition: width 0.3s ease; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-option { display: block; padding: var(--space-4); margin-bottom: var(--space-3); background: var(--bg-elevated); border: 2px solid var(--border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
+    .quiz-option:hover { border-color: var(--accent); background: var(--bg-card); }
+    .quiz-option input { display: none; }
+    .quiz-option.selected { border-color: var(--accent); background: var(--bg-card); }
+    .quiz-option-label { font-weight: 500; cursor: pointer; display: block; }
+    .quiz-option-desc { font-size: 14px; color: var(--text-tertiary); margin-top: 4px; }
+    .quiz-btn { display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: var(--radius-md); font-weight: 600; cursor: pointer; font-size: 16px; }
+    .quiz-btn:hover { background: #0a5fd0; }
+    .quiz-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .result-card { background: var(--bg-elevated); padding: var(--space-5); border-radius: var(--radius-lg); border: 2px solid var(--accent); margin-bottom: var(--space-4); }
+    .stack-tool { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); background: var(--bg); border-radius: var(--radius-md); margin-bottom: var(--space-2); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="deals.html" class="nav-link">🔥 Deals</a>
+        <a href="sponsored.html" class="nav-link">For Tool Makers</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div style="display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3);">— Interactive · 2 minutes</div>
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);"><a href="../index.html">Home</a> <span>/</span> <span>Stack Quiz</span></nav><h1 style="font-size: clamp(36px, 6vw, 56px); font-weight: 600; letter-spacing: -1.8px; line-height: 1.1; margin-bottom: var(--space-4);">Find Your <span style="background: linear-gradient(135deg, #0a72ef, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI Stack</span></h1>
+        <p style="font-size: 18px; color: var(--text-secondary);">Answer 6 quick questions. Get a personalized AI tool stack for your role, budget, and workflow.</p>
+        <p style="font-size: 14px; color: var(--text-tertiary); margin-top: var(--space-2);">Used by 2,400+ creators and founders · 100% free</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="quiz-container">
+        <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar" style="width: 0%;"></div></div>
+
+        <div id="quiz">
+          <div class="quiz-step active" data-step="1">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-2);">1. What's your role?</h2>
+            <p style="color: var(--text-tertiary); margin-bottom: var(--space-4);">Pick the closest match.</p>
+            <label class="quiz-option" data-value="creator">
+              <input type="radio" name="role" value="creator">
+              <div class="quiz-option-label">🎨 Creator / Content maker</div>
+              <div class="quiz-option-desc">YouTubers, writers, designers, course creators</div>
+            </label>
+            <label class="quiz-option" data-value="founder">
+              <input type="radio" name="role" value="founder">
+              <div class="quiz-option-label">🚀 Founder / Indie hacker</div>
+              <div class="quiz-option-desc">Building a product, solo or small team</div>
+            </label>
+            <label class="quiz-option" data-value="marketer">
+              <input type="radio" name="role" value="marketer">
+              <div class="quiz-option-label">📈 Marketer / Growth</div>
+              <div class="quiz-option-desc">Marketing teams, agencies, growth roles</div>
+            </label>
+            <label class="quiz-option" data-value="developer">
+              <input type="radio" name="role" value="developer">
+              <div class="quiz-option-label">💻 Developer / Engineer</div>
+              <div class="quiz-option-desc">Software engineers, technical founders</div>
+            </label>
+            <label class="quiz-option" data-value="freelancer">
+              <input type="radio" name="role" value="freelancer">
+              <div class="quiz-option-label">🧑‍💼 Freelancer / Consultant</div>
+              <div class="quiz-option-desc">Independent work, multiple clients</div>
+            </label>
+          </div>
+
+          <div class="quiz-step" data-step="2">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">2. What's your monthly budget for AI tools?</h2>
+            <label class="quiz-option" data-value="0">
+              <input type="radio" name="budget" value="0">
+              <div class="quiz-option-label">$0 — Free only</div>
+            </label>
+            <label class="quiz-option" data-value="20">
+              <input type="radio" name="budget" value="20">
+              <div class="quiz-option-label">$1-30 / month</div>
+            </label>
+            <label class="quiz-option" data-value="75">
+              <input type="radio" name="budget" value="75">
+              <div class="quiz-option-label">$30-100 / month</div>
+            </label>
+            <label class="quiz-option" data-value="200">
+              <input type="radio" name="budget" value="200">
+              <div class="quiz-option-label">$100-300 / month</div>
+            </label>
+            <label class="quiz-option" data-value="1000">
+              <input type="radio" name="budget" value="1000">
+              <div class="quiz-option-label">$300+ / month (team)</div>
+            </label>
+          </div>
+
+          <div class="quiz-step" data-step="3">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">3. What do you spend the most time on?</h2>
+            <label class="quiz-option" data-value="writing">
+              <input type="radio" name="task" value="writing">
+              <div class="quiz-option-label">✍️ Writing & content</div>
+            </label>
+            <label class="quiz-option" data-value="coding">
+              <input type="radio" name="task" value="coding">
+              <div class="quiz-option-label">💻 Coding & technical work</div>
+            </label>
+            <label class="quiz-option" data-value="design">
+              <input type="radio" name="task" value="design">
+              <div class="quiz-option-label">🎨 Design & images</div>
+            </label>
+            <label class="quiz-option" data-value="video">
+              <input type="radio" name="task" value="video">
+              <div class="quiz-option-label">🎬 Video & audio</div>
+            </label>
+            <label class="quiz-option" data-value="admin">
+              <input type="radio" name="task" value="admin">
+              <div class="quiz-option-label">⚙️ Admin & automation</div>
+            </label>
+          </div>
+
+          <div class="quiz-step" data-step="4">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">4. How important is privacy?</h2>
+            <label class="quiz-option" data-value="low">
+              <input type="radio" name="privacy" value="low">
+              <div class="quiz-option-label">Not important — I use whatever works</div>
+            </label>
+            <label class="quiz-option" data-value="medium">
+              <input type="radio" name="privacy" value="medium">
+              <div class="quiz-option-label">Somewhat — I avoid anything sketchy</div>
+            </label>
+            <label class="quiz-option" data-value="high">
+              <input type="radio" name="privacy" value="high">
+              <div class="quiz-option-label">Very — I need enterprise-grade security</div>
+            </label>
+          </div>
+
+          <div class="quiz-step" data-step="5">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">5. Have you used AI tools before?</h2>
+            <label class="quiz-option" data-value="newbie">
+              <input type="radio" name="experience" value="newbie">
+              <div class="quiz-option-label">No, this is my first time</div>
+            </label>
+            <label class="quiz-option" data-value="casual">
+              <input type="radio" name="experience" value="casual">
+              <div class="quiz-option-label">Yes, I use ChatGPT occasionally</div>
+            </label>
+            <label class="quiz-option" data-value="power">
+              <input type="radio" name="experience" value="power">
+              <div class="quiz-option-label">Yes, I pay for several AI tools</div>
+            </label>
+            <label class="quiz-option" data-value="pro">
+              <input type="radio" name="experience" value="pro">
+              <div class="quiz-option-label">Power user — I use AI daily for work</div>
+            </label>
+          </div>
+
+          <div class="quiz-step" data-step="6">
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">6. Where should we email your results?</h2>
+            <p style="color: var(--text-tertiary); margin-bottom: var(--space-4);">We'll send your custom AI stack + a weekly deal alert. No spam, unsubscribe anytime.</p>
+            <input type="email" id="emailInput" placeholder="you@email.com" style="width: 100%; padding: 14px; background: var(--bg-elevated); border: 2px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-family: inherit; font-size: 16px; margin-bottom: var(--space-4);">
+            <button class="quiz-btn" id="getResultsBtn" disabled>Get My AI Stack →</button>
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: var(--space-3);">By submitting, you agree to receive our weekly AI tool deals newsletter. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <div id="results" style="display: none;">
+          <div class="result-card">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: var(--space-2);">Your personalized AI stack</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Based on your answers, here's the stack we recommend:</p>
+            <div id="stackTools"></div>
+            <div style="margin-top: var(--space-5); padding: var(--space-4); background: var(--bg); border-radius: var(--radius-md); font-size: 14px;">
+              <strong>💰 Estimated total cost:</strong> <span id="totalCost"></span><br>
+              <strong>⏱️ Estimated time saved:</strong> <span id="timeSaved"></span>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: var(--space-5);">
+            <a href="deals.html" class="btn btn-primary btn-lg">🔥 See Current Deals</a>
+            <p style="color: var(--text-tertiary); font-size: 14px; margin-top: var(--space-3);">Sent to your inbox. Check your email for the full breakdown.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div><div class="footer-col-title">Explore</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tools.html" class="footer-link">Browse Tools</a>
+          <a href="deals.html" class="footer-link">🔥 Deals</a>
+        </div>
+        <div><div class="footer-col-title">Site</div>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="privacy.html" class="footer-link">Privacy</a>
+        </div>
+        <div><div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" target="_blank" rel="noopener" class="footer-link">Twitter / X</a>
+          <a href="https://www.linkedin.com/company/toolforge" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const STACKS = {
+      'creator-writing-low-newbie': [
+        { name: 'Claude (Free)', url: 'https://claude.ai/?via=toolforge', cost: 0, color: '#d97706' },
+        { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+        { name: 'ElevenLabs (Free tier)', url: 'https://elevenlabs.io/?via=toolforge', cost: 0, color: '#06b6d4' },
+      ],
+      'creator-video-medium-power': [
+        { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+        { name: 'ElevenLabs', url: 'https://elevenlabs.io/?via=toolforge', cost: 5, color: '#06b6d4' },
+        { name: 'Pika', url: 'https://pika.art/?via=toolforge', cost: 10, color: '#ec4899' },
+        { name: 'Perplexity Pro', url: 'https://www.perplexity.ai/?via=toolforge', cost: 20, color: '#0ea5e9' },
+      ],
+      'founder-coding-200-pro': [
+        { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+        { name: 'Claude Pro', url: 'https://claude.ai/?via=toolforge', cost: 20, color: '#d97706' },
+        { name: 'Notion AI', url: 'https://www.notion.so/product/ai?ref=toolforge', cost: 10, color: '#000000' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+        { name: 'Perplexity Pro', url: 'https://www.perplexity.ai/?via=toolforge', cost: 20, color: '#0ea5e9' },
+      ],
+      'founder-admin-75-casual': [
+        { name: 'Claude (Free)', url: 'https://claude.ai/?via=toolforge', cost: 0, color: '#d97706' },
+        { name: 'Notion AI', url: 'https://www.notion.so/product/ai?ref=toolforge', cost: 10, color: '#000000' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+        { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+      ],
+      'marketer-writing-200-power': [
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'ElevenLabs', url: 'https://elevenlabs.io/?via=toolforge', cost: 5, color: '#06b6d4' },
+        { name: 'HeyGen', url: 'https://www.heygen.com/?via=toolforge', cost: 29, color: '#7c3aed' },
+        { name: 'Perplexity Pro', url: 'https://www.perplexity.ai/?via=toolforge', cost: 20, color: '#0ea5e9' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+      ],
+      'developer-coding-75-power': [
+        { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+        { name: 'Claude Pro', url: 'https://claude.ai/?via=toolforge', cost: 20, color: '#d97706' },
+        { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+        { name: 'Consensus (Free)', url: 'https://consensus.app/?via=toolforge', cost: 0, color: '#0ea5e9' },
+      ],
+      'freelancer-writing-20-casual': [
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'Motion', url: 'https://www.usemotion.com/?via=toolforge', cost: 19, color: '#6366f1' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+        { name: 'Perplexity Pro', url: 'https://www.perplexity.ai/?via=toolforge', cost: 20, color: '#0ea5e9' },
+      ],
+      'freelancer-admin-20-casual': [
+        { name: 'Motion', url: 'https://www.usemotion.com/?via=toolforge', cost: 19, color: '#6366f1' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+      ],
+    };
+
+    // Default fallback stack
+    const FALLBACK_STACK = [
+      { name: 'Claude (Free)', url: 'https://claude.ai/?via=toolforge', cost: 0, color: '#d97706' },
+      { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+      { name: 'ElevenLabs (Free tier)', url: 'https://elevenlabs.io/?via=toolforge', cost: 0, color: '#06b6d4' },
+      { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+    ];
+
+    let currentStep = 1;
+    const totalSteps = 6;
+    const answers = {};
+
+    function updateProgress() {
+      const pct = ((currentStep - 1) / totalSteps) * 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+    }
+
+    function showStep(n) {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+      const next = document.querySelector(`.quiz-step[data-step="${n}"]`);
+      if (next) next.classList.add('active');
+      currentStep = n;
+      updateProgress();
+    }
+
+    document.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const input = this.querySelector('input');
+        const name = input.name;
+        const value = input.value;
+        answers[name] = value;
+        // Visual selection
+        document.querySelectorAll(`input[name="${name}"]`).forEach(i => {
+          i.closest('.quiz-option').classList.remove('selected');
+        });
+        this.classList.add('selected');
+        // Auto-advance
+        setTimeout(() => {
+          if (currentStep < 6) showStep(currentStep + 1);
+        }, 200);
+      });
+    });
+
+    document.getElementById('emailInput').addEventListener('input', function() {
+      document.getElementById('getResultsBtn').disabled = !this.value.includes('@');
+    });
+
+    document.getElementById('getResultsBtn').addEventListener('click', function() {
+      const email = document.getElementById('emailInput').value;
+      // Build stack key
+      const key = `${answers.role || 'creator'}-${answers.task || 'writing'}-${answers.budget || '20'}-${answers.experience || 'casual'}`;
+      let stack = STACKS[key];
+      if (!stack) {
+        // Try simpler match
+        const roleKey = `${answers.role || 'creator'}-${answers.task || 'writing'}-${answers.budget || '20'}-${answers.experience || 'casual'}`;
+        for (const k of Object.keys(STACKS)) {
+          if (k.startsWith(answers.role || 'creator')) { stack = STACKS[k]; break; }
+        }
+        if (!stack) stack = FALLBACK_STACK;
+      }
+
+      // Render results
+      const totalCost = stack.reduce((sum, t) => sum + t.cost, 0);
+      const html = stack.map(t => `
+        <a href="${t.url}" target="_blank" rel="noopener sponsored" class="stack-tool" style="text-decoration: none; color: inherit;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: ${t.color}; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px; flex-shrink: 0;">${t.name[0]}</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 500;">${t.name}</div>
+            <div style="font-size: 12px; color: var(--text-tertiary);">${t.cost === 0 ? 'Free' : '$' + t.cost + '/mo'}</div>
+          </div>
+          <div style="color: var(--accent); font-size: 14px;">Try →</div>
+        </a>
+      `).join('');
+      document.getElementById('stackTools').innerHTML = html;
+      document.getElementById('totalCost').textContent = totalCost === 0 ? 'FREE' : '$' + totalCost + '/mo';
+      document.getElementById('timeSaved').textContent = '~10-15 hours/week';
+
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('progressBar').style.width = '100%';
+
+      // Track conversion
+      if (window.plausible) plausible('quiz_complete', { props: { role: answers.role, budget: answers.budget, email_provided: 'yes' } });
+
+      // Save email to Formspree (no auth needed, free tier)
+      fetch('https://formspree.io/f/xwpevlrd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          role: answers.role,
+          budget: answers.budget,
+          task: answers.task,
+          privacy: answers.privacy,
+          experience: answers.experience,
+          recommended_stack: stack.map(t => t.name).join(', '),
+          source: 'stack_quiz',
+        })
+      }).catch(() => {});
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>

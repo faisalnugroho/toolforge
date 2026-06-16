@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search AI Tools — ToolForge</title>
+  <meta name="description" content="Search across 64 hand-tested AI tools. Find the right tool for your work, your budget, your role.">
+  <meta property="og:title" content="Search AI Tools — ToolForge">
+  <meta property="og:description" content="Search across 60+ hand-tested AI tools.">
+  <link rel="canonical" href="https://toolforge.io/search.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+  <style>
+    .search-input { width: 100%; max-width: 600px; padding: 14px 18px; font-size: 18px; border: 2px solid var(--border-strong); border-radius: 12px; background: var(--bg); color: var(--text-primary); margin: var(--space-4) auto var(--space-5); display: block; }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--space-5); justify-content: center; }
+    .filter-pill { padding: 6px 14px; border: 1px solid var(--border); border-radius: 16px; font-size: 13px; cursor: pointer; background: var(--bg); }
+    .filter-pill.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .search-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-4); margin-top: var(--space-5); }
+    .result-card { padding: var(--space-4); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; color: inherit; display: block; transition: all 0.15s; }
+    .result-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .result-name { font-weight: 600; font-size: 18px; margin-bottom: 4px; }
+    .result-cat { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .result-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: var(--space-3); }
+    .result-price { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+    .no-results { text-align: center; padding: var(--space-7); color: var(--text-tertiary); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">T</div>
+        ToolForge
+      </a>
+      <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="tools.html" class="nav-link">Browse</a>
+    <a href="deals.html" class="nav-link">🔥 Deals</a>
+    <a href="stack-quiz.html" class="nav-link">🧪 Stack Quiz</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div style="display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3);">— Free Tool</div>
+        <h1 style="font-size: clamp(36px, 6vw, 56px); font-weight: 600; letter-spacing: -1.8px; line-height: 1.1; margin-bottom: var(--space-4);">Search AI Tools</h1>
+        <p style="font-size: 18px; color: var(--text-secondary);">Search across 64 hand-tested AI tools. Find the right tool for your work, budget, and role.</p>
+        <input type="search" id="search-input" class="search-input" placeholder="Search by name, category, or use case..." autofocus>
+        <div class="filter-pills" id="filter-pills">
+          <button class="filter-pill active" data-cat="all">All</button>
+          <button class="filter-pill" data-cat="Writing">Writing</button>
+          <button class="filter-pill" data-cat="Image">Image</button>
+          <button class="filter-pill" data-cat="Coding">Coding</button>
+          <button class="filter-pill" data-cat="Video">Video</button>
+          <button class="filter-pill" data-cat="Audio">Audio</button>
+          <button class="filter-pill" data-cat="Research">Research</button>
+          <button class="filter-pill" data-cat="Productivity">Productivity</button>
+          <button class="filter-pill" data-cat="Business">Business</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: var(--space-5);">
+    <div class="container">
+      <div id="search-stats" style="text-align: center; color: var(--text-tertiary); font-size: 14px; margin-bottom: var(--space-4);">Showing all 64 tools</div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">T</div>
+            ToolForge
+          </a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tools.html" class="footer-link">Browse Tools</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" class="footer-link">Twitter / X</a>
+          <a href="rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const tools = [{"slug":"devin","name":"Devin (Cognition)","category":"Coding","tagline":"The first AI software engineer. Plans, codes, debugs, and ships autonomously.","price":"$500/mo"},{"slug":"continue","name":"Continue","category":"Coding","tagline":"Open-source AI code assistant. Runs in VSCode/JetBrains with any model.","price":"Free"},{"slug":"descript","name":"Descript 4.0","category":"Audio","tagline":"Edit video and audio by editing text. AI removes filler, transcribes, dubs.","price":"$24/mo Pro"},{"slug":"suno","name":"Suno v4","category":"Audio","tagline":"The AI that made anyone a musician. Generate full songs with vocals from a single prompt.","price":"$10/mo"},{"slug":"taskade","name":"Taskade AI","category":"Productivity","tagline":"AI-powered project management. Auto-generate tasks, mind maps, workflows.","price":"$7/mo Pro"},{"slug":"invideo","name":"InVideo AI","category":"Video","tagline":"Generate full videos from a single text prompt","price":"$25/mo"},{"slug":"leonardo-ai","name":"Leonardo.AI","category":"Image","tagline":"The Midjourney alternative for game assets and product photography. Fine-tuning is unmatched.","price":"$12/mo"},{"slug":"scite","name":"Scite AI","category":"Research","tagline":"See how papers are cited: supporting, contrasting, or mentioning. The smart citation tool.","price":"$20/mo Plus"},{"slug":"luma","name":"Luma Dream Machine 2.0","category":"Video","tagline":"Photorealistic AI video from text/image. 5-second clips, physics-accurate motion.","price":"$24/mo Standard"},{"slug":"runway","name":"Runway Gen-4","category":"Video","tagline":"Hollywood-grade AI video generation. 10-second clips, character consistency, motion control.","price":"$12/mo"},{"slug":"claude-3-7","name":"Claude 3.7 Sonnet","category":"Other","tagline":"The best AI for code, reasoning, and long-form writing in 2026.","price":"$20/mo"},{"slug":"rytr","name":"Rytr","category":"Writing","tagline":"Budget AI writer for marketing teams and solopreneurs","price":"$9/mo"},{"slug":"sourcegraph-cody","name":"Sourcegraph Cody","category":"Coding","tagline":"AI code assistant with deep codebase context. Understands your entire repo.","price":"Free / $9 Pro"},{"slug":"chatgpt","name":"ChatGPT (GPT-5)","category":"Productivity","tagline":"OpenAI's flagship. Voice, vision, image gen, custom GPTs, agents.","price":"$20/mo Plus"},{"slug":"anyword","name":"Anyword","category":"Writing","tagline":"AI copywriter with predictive performance scores","price":"$49/mo"},{"slug":"v0","name":"v0.dev (Vercel)","category":"Coding","tagline":"Generate React components with AI. From prompt to production UI in seconds.","price":"$20/mo Premium"},{"slug":"tabnine","name":"Tabnine","category":"Coding","tagline":"Privacy-first AI code completion for enterprise teams","price":"$12/mo"},{"slug":"pika","name":"Pika 2.0","category":"Video","tagline":"The playful AI video generator. Best for social content, transitions, and effects.","price":"$10/mo"},{"slug":"consensus","name":"Consensus","category":"Research","tagline":"The AI search engine for scientific research. Answers backed by peer-reviewed papers.","price":"$9/mo"},{"slug":"copy-ai","name":"Copy.ai","category":"Writing","tagline":"The fastest AI copywriter for marketers. Workflows that auto-generate weeks of content in minutes.","price":"$49/mo"},{"slug":"windsurf","name":"Windsurf","category":"Coding","tagline":"The Cursor competitor that's catching up fast. Cascade agent is a serious Composer alternative.","price":"$15/mo"},{"slug":"sudowrite","name":"Sudowrite","category":"Writing","tagline":"The AI writing assistant for novelists. Story-focused features that ChatGPT doesn't have.","price":"$19/mo"},{"slug":"grammarly","name":"Grammarly 2026","category":"Writing","tagline":"AI writing assistant for grammar, tone, and clarity. Now with generative AI.","price":"$12/mo Premium"},{"slug":"monica","name":"Monica AI","category":"Productivity","tagline":"AI copilot in your browser. GPT-4, Claude, Gemini — all in one sidebar.","price":"$9.9/mo Pro"},{"slug":"flux","name":"Flux 1.1 Pro","category":"Image","tagline":"Black Forest Labs' open-weights image model. Rivals Midjourney, runs on your GPU.","price":"$0.05/image"},{"slug":"dall-e-3","name":"DALL-E 3 (via ChatGPT)","category":"Image","tagline":"OpenAI's image generator. Native ChatGPT integration, prompt understanding.","price":"$20/mo Plus"},{"slug":"aider","name":"Aider","category":"Coding","tagline":"AI pair programming in your terminal. Multi-file edits, git-aware, runs offline.","price":"Free"},{"slug":"wordtune","name":"Wordtune","category":"Writing","tagline":"AI sentence rewriter that reads like a human editor","price":"$10/mo"},{"slug":"suno-v4","name":"Suno v4.5","category":"Audio","tagline":"AI music with vocals, stem separation, and now full song structure.","price":"$10/mo Pro"},{"slug":"udio","name":"Udio v2","category":"Audio","tagline":"AI music generator. The Suno alternative with better vocals and full songs.","price":"$10/mo Standard"},{"slug":"github-copilot","name":"GitHub Copilot","category":"Coding","tagline":"The original AI pair programmer. Now with multi-model support and Chat integration.","price":"$10/mo"},{"slug":"kapwing","name":"Kapwing AI","category":"Video","tagline":"AI video editor in the browser. Smart cut, auto-subtitle, AI script-to-video.","price":"$16/mo Pro"},{"slug":"jasper","name":"Jasper AI","category":"Writing","tagline":"The marketing-grade AI writer. Brand voice, team workflows, deep templates.","price":"$49/mo"},{"slug":"elicit","name":"Elicit","category":"Research","tagline":"AI research assistant. Find papers, extract data, synthesize findings.","price":"$10/mo Plus"},{"slug":"writesonic","name":"Writesonic","category":"Writing","tagline":"The affordable AI writer. Real-time SEO data, factual content, and competitive pricing.","price":"$20/mo"},{"slug":"notion-ai","name":"Notion AI","category":"Productivity","tagline":"AI inside your second brain. Summarize, translate, and generate inside the workspace you already live in.","price":"$10/mo"},{"slug":"midjourney","name":"Midjourney","category":"Image","tagline":"The most artistic AI image generator. v7 produces photorealism and illustration that no other model matches.","price":"$10/mo"},{"slug":"motion","name":"Motion","category":"Productivity","tagline":"The AI calendar that plans your day. Auto-schedules tasks around meetings and deadlines.","price":"$34/mo"},{"slug":"blackbox-ai","name":"Blackbox AI","category":"Coding","tagline":"AI code generation in your browser. Multi-language, autocomplete, chat.","price":"Free / $7 Pro"},{"slug":"mem","name":"Mem X","category":"Productivity","tagline":"The AI-powered notes app that organizes itself. No folders, no tags — just write.","price":"$15/mo"},{"slug":"codeium","name":"Codeium","category":"Coding","tagline":"Free AI code completion that rivals Copilot","price":"Free"},{"slug":"elevenlabs","name":"ElevenLabs","category":"Audio","tagline":"The most realistic AI voice generator. Clone any voice, speak in 29 languages.","price":"$5/mo"},{"slug":"synthesia","name":"Synthesia 2.0","category":"Video","tagline":"AI avatar videos in 140+ languages. The enterprise choice.","price":"$22/mo Starter"},{"slug":"lexica","name":"Lexica.art","category":"Image","tagline":"AI image search engine + generator. Find prompts that work, then build on them.","price":"$8/mo Starter"},{"slug":"recraft","name":"Recraft","category":"Image","tagline":"The AI image generator built for designers and brand work","price":"Free + $12/mo Pro"},{"slug":"make","name":"Make (Integromat)","category":"Business","tagline":"The visual automation platform. Build complex workflows without code.","price":"$9/mo"},{"slug":"cursor","name":"Cursor","category":"Coding","tagline":"The AI-first code editor. Built on VSCode, supercharged with GPT-4 and Claude.","price":"$20/mo"},{"slug":"gamma","name":"Gamma","category":"Business","tagline":"AI presentation maker. Type a prompt, get a full slide deck. No design skills needed.","price":"$8/mo Free"},{"slug":"ideogram","name":"Ideogram 2.0","category":"Image","tagline":"Best text rendering in AI image generation. 2.0 fixed hands and faces.","price":"$7/mo Basic"},{"slug":"krea","name":"Krea AI","category":"Image","tagline":"Real-time AI image generation. Sketch to render in 100ms.","price":"$10/mo Basic"},{"slug":"kling","name":"Kling AI 1.6","category":"Video","tagline":"Chinese AI video model. 10-second clips, great motion, lower price than Runway.","price":"$5/mo Basic"},{"slug":"frase","name":"Frase 2.0","category":"Writing","tagline":"SEO content optimization + AI writer. The Surfer SEO alternative.","price":"$30/mo Solo"},{"slug":"quillbot","name":"Quillbot","category":"Writing","tagline":"The AI paraphrasing tool trusted by 50M+ students and writers","price":"$9/mo"},{"slug":"tome","name":"Tome 2.0","category":"Business","tagline":"AI storytelling for business. Interactive presentations, documents, and prototypes.","price":"$16/mo Pro"},{"slug":"gemini-2","name":"Gemini 2.5 Pro","category":"Productivity","tagline":"Google's most capable AI. 2M context, native Workspace integration, real-time info.","price":"$20/mo Advanced"},{"slug":"hemingway","name":"Hemingway Editor 4.0","category":"Writing","tagline":"Make your writing bold and clear. AI-powered readability coach.","price":"$20 one-time"},{"slug":"dalle","name":"DALL-E 3","category":"Image","tagline":"OpenAI's flagship image generator, now with ChatGPT integration","price":"$20/mo"},{"slug":"manus","name":"Manus AI","category":"Productivity","tagline":"Autonomous AI agent that does real work. Multi-step tasks, browser, code, files.","price":"$39/mo Pro"},{"slug":"replit-agent","name":"Replit Agent","category":"Coding","tagline":"AI app builder that writes, debugs, and deploys full apps from a prompt.","price":"$25/mo Core"},{"slug":"playht","name":"PlayHT 3.0","category":"Audio","tagline":"AI voice generator with 600+ voices in 100+ languages. Best for podcasts.","price":"$29/mo Creator"},{"slug":"pictory","name":"Pictory","category":"Video","tagline":"Turn text into video. AI scripts, storyboards, and auto-edits for social media.","price":"$23/mo Starter"},{"slug":"murf","name":"Murf AI","category":"Audio","tagline":"AI voiceover for explainer videos and corporate training. 200+ studio voices.","price":"$23/mo Creator"},{"slug":"perplexity","name":"Perplexity Pro","category":"Research","tagline":"The AI answer engine. Cited sources, real-time web, GPT-4 + Claude + Sonar under the hood.","price":"$20/mo"},{"slug":"heygen","name":"HeyGen","category":"Video","tagline":"The AI avatar video platform. Create spokesperson videos without filming.","price":"$29/mo"}];
+    const resultsEl = document.getElementById('search-results');
+    const statsEl = document.getElementById('search-stats');
+    const searchInput = document.getElementById('search-input');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    let currentCat = 'all';
+    let currentQuery = '';
+
+    // Get query from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('q')) {
+      searchInput.value = urlParams.get('q');
+      currentQuery = urlParams.get('q');
+    }
+
+    function render() {
+      const filtered = tools.filter(t => {
+        const catMatch = currentCat === 'all' || t.category === currentCat;
+        const q = currentQuery.toLowerCase();
+        const queryMatch = !q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q) || t.category.toLowerCase().includes(q) || t.slug.toLowerCase().includes(q);
+        return catMatch && queryMatch;
+      });
+
+      statsEl.textContent = 'Showing ' + filtered.length + ' of ' + tools.length + ' tools' + (currentQuery ? ' for "' + currentQuery + '"' : '');
+
+      if (filtered.length === 0) {
+        resultsEl.innerHTML = '<div class="no-results">No tools found. Try a different search.</div>';
+        return;
+      }
+
+      resultsEl.innerHTML = filtered.map(t => 
+        '<a href="tools/' + t.slug + '.html" class="result-card">' +
+          '<div class="result-cat">' + t.category + '</div>' +
+          '<div class="result-name">' + t.name + '</div>' +
+          '<div class="result-desc">' + t.tagline + '</div>' +
+          '<div class="result-price">' + t.price + '</div>' +
+        '</a>'
+      ).join('');
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      currentQuery = e.target.value;
+      render();
+    });
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentCat = pill.dataset.cat;
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>

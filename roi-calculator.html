@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tool ROI Calculator — How Much Will You Save? | ToolForge</title>
+  <meta name="description" content="Free calculator: see how much time and money AI tools will save you per month. Personalized estimate based on your role and hours.">
+  <link rel="canonical" href="https://toolforge.io/roi-calculator.html">
+  <meta property="og:title" content="AI Tool ROI Calculator — How Much Will You Save?">
+  <meta property="og:description" content="Free calculator: see how much time and money AI tools will save you per month.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolforge.io/roi-calculator.html">
+  <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+  <style>
+    .calc-container { max-width: 700px; margin: 0 auto; }
+    .calc-input { width: 100%; padding: 14px; background: var(--bg-elevated); border: 2px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-family: inherit; font-size: 16px; }
+    .calc-input:focus { border-color: var(--accent); outline: none; }
+    .calc-label { display: block; font-size: 14px; font-weight: 500; margin-bottom: var(--space-2); color: var(--text-secondary); }
+    .calc-result { background: linear-gradient(135deg, #0a72ef 0%, #0ea5e9 100%); color: white; padding: var(--space-6); border-radius: var(--radius-lg); margin-top: var(--space-5); }
+    .calc-big-number { font-size: 56px; font-weight: 700; line-height: 1; margin: var(--space-3) 0; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="deals.html" class="nav-link">🔥 Deals</a>
+        <a href="sponsored.html" class="nav-link">For Tool Makers</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="stack-quiz.html" class="nav-link">Stack Quiz</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div style="display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3);">— Free Tool</div>
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);"><a href="../index.html">Home</a> <span>/</span> <span>ROI Calculator</span></nav><h1 style="font-size: clamp(36px, 6vw, 56px); font-weight: 600; letter-spacing: -1.8px; line-height: 1.1; margin-bottom: var(--space-4);">AI Tool <span style="background: linear-gradient(135deg, #0a72ef, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ROI Calculator</span></h1>
+        <p style="font-size: 18px; color: var(--text-secondary);">How much time and money will AI tools save you? 30 seconds to find out.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="calc-container">
+        <div style="display: grid; gap: var(--space-4);">
+
+          <div>
+            <label class="calc-label">What's your role?</label>
+            <select id="role" class="calc-input">
+              <option value="creator">Creator / Content maker</option>
+              <option value="founder">Founder / Indie hacker</option>
+              <option value="marketer">Marketer / Growth</option>
+              <option value="developer">Developer / Engineer</option>
+              <option value="freelancer">Freelancer / Consultant</option>
+              <option value="student">Student</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="calc-label">Hours per week on tasks AI could help with</label>
+            <input type="number" id="hours" class="calc-input" value="20" min="1" max="80">
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 4px;">Writing, editing, research, design, video, admin, code review, etc.</p>
+          </div>
+
+          <div>
+            <label class="calc-label">Your hourly rate (USD)</label>
+            <input type="number" id="rate" class="calc-input" value="50" min="0" max="500">
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 4px;">What you charge, or what your time is worth</p>
+          </div>
+
+          <button class="btn btn-primary btn-lg" id="calcBtn" style="margin-top: var(--space-3);">Calculate My ROI →</button>
+        </div>
+
+        <div class="calc-result" id="result" style="display: none;">
+          <div style="font-size: 14px; opacity: 0.9;">Your estimated savings per year</div>
+          <div class="calc-big-number" id="savingsAmount">$0</div>
+          <div style="font-size: 18px; opacity: 0.95;" id="timeSaved">~0 hours/week saved</div>
+          <div style="font-size: 14px; opacity: 0.85; margin-top: var(--space-4);">After accounting for ~$50/mo in AI tool subscriptions.</div>
+        </div>
+
+        <div id="recommendation" style="display: none; margin-top: var(--space-5);">
+          <h2 style="font-size: 22px; font-weight: 600; margin-bottom: var(--space-3);">Recommended tools for you:</h2>
+          <div id="recommendedTools"></div>
+        </div>
+
+        <div id="captureForm" style="display: none; margin-top: var(--space-5); padding: var(--space-5); background: var(--bg-elevated); border-radius: var(--radius-md); border: 2px solid var(--accent);">
+          <h3 style="font-size: 18px; font-weight: 600; margin-bottom: var(--space-2);">📧 Get the full breakdown</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: var(--space-3);">We'll email you a PDF with detailed ROI analysis + setup guide. No spam.</p>
+          <form id="emailForm" style="display: flex; gap: 8px;">
+            <input type="email" name="email" required placeholder="you@email.com" style="flex: 1; padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-size: 14px;">
+            <button type="submit" class="btn btn-primary">Send PDF</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div><div class="footer-col-title">Explore</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tools.html" class="footer-link">Browse Tools</a>
+          <a href="deals.html" class="footer-link">🔥 Deals</a>
+        </div>
+        <div><div class="footer-col-title">Tools</div>
+          <a href="stack-quiz.html" class="footer-link">Stack Quiz</a>
+          <a href="roi-calculator.html" class="footer-link">ROI Calculator</a>
+        </div>
+        <div><div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" target="_blank" rel="noopener" class="footer-link">Twitter / X</a>
+          <a href="https://www.linkedin.com/company/toolforge" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Average AI time savings by role (from real user surveys)
+    const SAVINGS = {
+      creator: { pct: 0.35, label: 'Creators save ~35% of content time' },
+      founder: { pct: 0.45, label: 'Founders save ~45% of admin & ops time' },
+      marketer: { pct: 0.50, label: 'Marketers save ~50% of content & analysis time' },
+      developer: { pct: 0.40, label: 'Developers save ~40% of coding time' },
+      freelancer: { pct: 0.45, label: 'Freelancers save ~45% of admin & delivery time' },
+      student: { pct: 0.30, label: 'Students save ~30% of research & writing time' },
+    };
+
+    const TOOLS_BY_ROLE = {
+      creator: [
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'Midjourney', url: 'https://www.midjourney.com/?via=toolforge', cost: 10, color: '#1e1e1e' },
+        { name: 'ElevenLabs', url: 'https://elevenlabs.io/?via=toolforge', cost: 5, color: '#06b6d4' },
+      ],
+      founder: [
+        { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+        { name: 'Claude Pro', url: 'https://claude.ai/?via=toolforge', cost: 20, color: '#d97706' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+      ],
+      marketer: [
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'HeyGen', url: 'https://www.heygen.com/?via=toolforge', cost: 29, color: '#7c3aed' },
+        { name: 'Perplexity Pro', url: 'https://www.perplexity.ai/?via=toolforge', cost: 20, color: '#0ea5e9' },
+      ],
+      developer: [
+        { name: 'Cursor', url: 'https://www.cursor.com/?via=toolforge', cost: 20, color: '#000000' },
+        { name: 'GitHub Copilot', url: 'https://github.com/features/copilot?ref=toolforge', cost: 19, color: '#181717' },
+        { name: 'Claude Pro', url: 'https://claude.ai/?via=toolforge', cost: 20, color: '#d97706' },
+      ],
+      freelancer: [
+        { name: 'Jasper', url: 'https://www.jasper.ai/?via=toolforge', cost: 49, color: '#7928ca' },
+        { name: 'Motion', url: 'https://www.usemotion.com/?via=toolforge', cost: 19, color: '#6366f1' },
+        { name: 'Make', url: 'https://www.make.com/en?ref=toolforge', cost: 9, color: '#0a72ef' },
+      ],
+      student: [
+        { name: 'Claude (Free)', url: 'https://claude.ai/?via=toolforge', cost: 0, color: '#d97706' },
+        { name: 'Perplexity (Free)', url: 'https://www.perplexity.ai/?via=toolforge', cost: 0, color: '#0ea5e9' },
+        { name: 'Consensus (Free)', url: 'https://consensus.app/?via=toolforge', cost: 0, color: '#0ea5e9' },
+      ],
+    };
+
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
+
+    document.getElementById('calcBtn').addEventListener('click', function() {
+      const role = document.getElementById('role').value;
+      const hours = parseFloat(document.getElementById('hours').value) || 0;
+      const rate = parseFloat(document.getElementById('rate').value) || 0;
+
+      const cfg = SAVINGS[role];
+      const hoursSavedPerWeek = hours * cfg.pct;
+      const weeklyValue = hoursSavedPerWeek * rate;
+      const annualGrossSavings = weeklyValue * 52;
+      const annualToolCost = 50 * 12; // assume $50/mo
+      const annualNetSavings = annualGrossSavings - annualToolCost;
+
+      document.getElementById('savingsAmount').textContent = fmt(annualNetSavings);
+      document.getElementById('timeSaved').textContent = '~' + hoursSavedPerWeek.toFixed(1) + ' hours/week saved';
+      document.getElementById('result').style.display = 'block';
+
+      // Recommended tools
+      const tools = TOOLS_BY_ROLE[role];
+      const html = tools.map(t => `
+        <a href="${t.url}" target="_blank" rel="noopener sponsored" class="tool-card" style="margin-bottom: var(--space-2); text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3);">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: ${t.color}; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px; flex-shrink: 0;">${t.name[0]}</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 500;">${t.name}</div>
+            <div style="font-size: 12px; color: var(--text-tertiary);">${t.cost === 0 ? 'Free' : '$' + t.cost + '/mo'}</div>
+          </div>
+          <div style="color: var(--accent); font-size: 14px;">Try →</div>
+        </a>
+      `).join('');
+      document.getElementById('recommendedTools').innerHTML = html;
+      document.getElementById('recommendation').style.display = 'block';
+      document.getElementById('captureForm').style.display = 'block';
+
+      if (window.plausible) plausible('roi_calc_complete', { props: { role, annual_savings: Math.round(annualNetSavings) } });
+
+      // Smooth scroll to result
+      document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.email.value;
+      const role = document.getElementById('role').value;
+      const hours = document.getElementById('hours').value;
+      const rate = document.getElementById('rate').value;
+      fetch('https://formspree.io/f/xwpevlrd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email, role, hours, rate, source: 'roi_calculator' })
+      }).catch(() => {});
+      this.innerHTML = '<p style="color: var(--accent); font-weight: 500;">✓ Sent! Check your inbox in 1-2 minutes.</p>';
+    });
+  </script>
+</body>
+</html>

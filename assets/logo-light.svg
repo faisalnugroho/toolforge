@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a72ef"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" x="0" y="6" rx="10" fill="url(#g)"/>
+  <text x="24" y="38" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">T</text>
+  <text x="60" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#171717">ToolForge</text>
+</svg>

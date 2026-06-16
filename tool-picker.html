@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tool Picker — Find Your Perfect Stack in 2 Minutes | ToolForge</title>
+  <meta name="description" content="Tell us your role, budget, and goals. Get a personalized AI tool stack in 2 minutes. The fastest way to find the right AI tools for you.">
+  <meta property="og:title" content="AI Tool Picker — Find Your Perfect Stack in 2 Minutes">
+  <meta property="og:description" content="Tell us your role, budget, and goals. Get a personalized AI tool stack in 2 minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolforge.io/tool-picker.html">
+  <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Tool Picker — Find Your Perfect Stack in 2 Minutes">
+  <meta name="twitter:description" content="Tell us your role, budget, and goals. Get a personalized AI tool stack in 2 minutes.">
+  <link rel="canonical" href="https://toolforge.io/tool-picker.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ToolForge AI Tool Picker",
+  "description": "Find your perfect AI tool stack based on role, budget, and goals",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+  <style>
+    .picker-step { display: none; }
+    .picker-step.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .picker-option { display: block; padding: var(--space-4); margin-bottom: var(--space-3); border: 2px solid var(--border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.15s; background: var(--bg-card); }
+    .picker-option:hover { border-color: var(--accent); background: var(--bg-elevated); }
+    .picker-option.selected { border-color: var(--accent); background: var(--bg-elevated); }
+    .picker-option input { margin-right: var(--space-3); }
+    .picker-option strong { display: block; margin-bottom: 4px; }
+    .picker-option small { color: var(--text-tertiary); }
+    .progress-bar { width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-bottom: var(--space-6); }
+    .progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+    .picker-result { background: var(--bg-elevated); padding: var(--space-5); border-radius: var(--radius-lg); margin-top: var(--space-5); }
+    .picker-stack-item { display: flex; align-items: center; padding: var(--space-3); background: var(--bg-card); border-radius: var(--radius-md); margin-bottom: var(--space-2); }
+    .picker-stack-item .stack-logo { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; margin-right: var(--space-3); flex-shrink: 0; }
+    .picker-stack-item .stack-info { flex: 1; }
+    .picker-stack-item .stack-name { font-weight: 600; }
+    .picker-stack-item .stack-purpose { font-size: 13px; color: var(--text-tertiary); }
+    .picker-stack-item .stack-price { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">T</div>
+        ToolForge
+      </a>
+      <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="tools.html" class="nav-link">Browse</a>
+    <a href="deals.html" class="nav-link">🔥 Deals</a>
+    <a href="stack-quiz.html" class="nav-link">🧪 Stack Quiz</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <div style="display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3);">— Free Tool</div>
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);"><a href="../index.html">Home</a> <span>/</span> <span>AI Tool Picker</span></nav><h1 style="font-size: clamp(36px, 6vw, 56px); font-weight: 600; letter-spacing: -1.8px; line-height: 1.1; margin-bottom: var(--space-4);">AI Tool Picker</h1>
+        <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.5;">Answer 4 questions, get a personalized AI tool stack for your role and budget. 2 minutes.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: var(--space-7);">
+    <div class="container" style="max-width: 700px;">
+      
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 25%;"></div>
+      </div>
+      <div style="font-size: 13px; color: var(--text-tertiary); margin-bottom: var(--space-5); font-family: var(--font-mono);">
+        STEP <span id="step-current">1</span> OF 4
+      </div>
+
+      <div id="picker-container">
+        <!-- Step 1: Role -->
+        <div class="picker-step active" data-step="1">
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">What do you do?</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-5);">Pick the role that best describes your primary work.</p>
+          
+          <label class="picker-option" data-value="writer">
+            <input type="radio" name="role" value="writer">
+            <strong>✍️ Writer / Content Creator</strong>
+            <small>Blog posts, articles, copywriting, social media</small>
+          </label>
+          <label class="picker-option" data-value="designer">
+            <input type="radio" name="role" value="designer">
+            <strong>🎨 Designer / Creative</strong>
+            <small>Visual design, illustration, branding, UI/UX</small>
+          </label>
+          <label class="picker-option" data-value="developer">
+            <input type="radio" name="role" value="developer">
+            <strong>💻 Developer / Engineer</strong>
+            <small>Code, build apps, debug, ship software</small>
+          </label>
+          <label class="picker-option" data-value="marketer">
+            <input type="radio" name="role" value="marketer">
+            <strong>📈 Marketer / Growth</strong>
+            <small>SEO, ads, social, email, analytics</small>
+          </label>
+          <label class="picker-option" data-value="founder">
+            <input type="radio" name="role" value="founder">
+            <strong>🚀 Founder / Solopreneur</strong>
+            <small>Building a business, doing many roles at once</small>
+          </label>
+          <label class="picker-option" data-value="researcher">
+            <input type="radio" name="role" value="researcher">
+            <strong>🔬 Researcher / Analyst</strong>
+            <small>Academic research, market analysis, data</small>
+          </label>
+          <label class="picker-option" data-value="student">
+            <input type="radio" name="role" value="student">
+            <strong>🎓 Student</strong>
+            <small>Studying, learning, school projects</small>
+          </label>
+          <label class="picker-option" data-value="other">
+            <input type="radio" name="role" value="other">
+            <strong>🌐 Something else</strong>
+            <small>Pick the closest match above</small>
+          </label>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="picker-step" data-step="2">
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">What's your monthly budget?</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-5);">For AI tool subscriptions (not including hardware).</p>
+          
+          <label class="picker-option" data-value="0">
+            <input type="radio" name="budget" value="0">
+            <strong>🆓 Free only</strong>
+            <small>I'll use free tiers and pay-as-you-go APIs</small>
+          </label>
+          <label class="picker-option" data-value="20">
+            <input type="radio" name="budget" value="20">
+            <strong>💵 $20/mo</strong>
+            <small>One core paid tool (ChatGPT Plus or Claude Pro)</small>
+          </label>
+          <label class="picker-option" data-value="50">
+            <input type="radio" name="budget" value="50">
+            <strong>💰 $50/mo</strong>
+            <small>Two to three core tools</small>
+          </label>
+          <label class="picker-option" data-value="100">
+            <input type="radio" name="budget" value="100">
+            <strong>💎 $100/mo</strong>
+            <small>Full stack of 4-6 tools</small>
+          </label>
+          <label class="picker-option" data-value="200">
+            <input type="radio" name="budget" value="200">
+            <strong>🏢 $200+/mo</strong>
+            <small>No budget constraints, best of everything</small>
+          </label>
+        </div>
+
+        <!-- Step 3: Priority -->
+        <div class="picker-step" data-step="3">
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">What's your #1 priority?</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-5);">The thing you want AI to help with most.</p>
+          
+          <label class="picker-option" data-value="speed">
+            <input type="radio" name="priority" value="speed">
+            <strong>⚡ Speed</strong>
+            <small>Ship faster, automate the boring 80%</small>
+          </label>
+          <label class="picker-option" data-value="quality">
+            <input type="radio" name="priority" value="quality">
+            <strong>✨ Quality</strong>
+            <small>Best possible output, even if slower</small>
+          </label>
+          <label class="picker-option" data-value="cost">
+            <input type="radio" name="priority" value="cost">
+            <strong>💵 Cost savings</strong>
+            <small>Reduce expenses, get more done for less</small>
+          </label>
+          <label class="picker-option" data-value="learning">
+            <input type="radio" name="priority" value="learning">
+            <strong>🧠 Learning</strong>
+            <small>Understand topics, upskill, get smarter</small>
+          </label>
+          <label class="picker-option" data-value="creativity">
+            <input type="radio" name="priority" value="creativity">
+            <strong>🎨 Creativity</strong>
+            <small>Generate new ideas, designs, content</small>
+          </label>
+        </div>
+
+        <!-- Step 4: Experience -->
+        <div class="picker-step" data-step="4">
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">How experienced are you with AI tools?</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-5);">So we can recommend beginner-friendly or pro-level options.</p>
+          
+          <label class="picker-option" data-value="newbie">
+            <input type="radio" name="experience" value="newbie">
+            <strong>🌱 New to AI</strong>
+            <small>I've tried ChatGPT a few times, not much else</small>
+          </label>
+          <label class="picker-option" data-value="intermediate">
+            <input type="radio" name="experience" value="intermediate">
+            <strong>🌿 Some experience</strong>
+            <small>Use 1-2 tools regularly, looking to expand</small>
+          </label>
+          <label class="picker-option" data-value="pro">
+            <input type="radio" name="experience" value="pro">
+            <strong>🌳 Power user</strong>
+            <small>Use 5+ tools daily, always testing new ones</small>
+          </label>
+        </div>
+
+        <!-- Result -->
+        <div class="picker-step" data-step="5">
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-2);">Your Personalized Stack</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Based on your answers, here's what we recommend.</p>
+          
+          <div class="picker-result" id="picker-result"></div>
+          
+          <div style="margin-top: var(--space-5); padding: var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-md); text-align: center;">
+            <h4 style="margin-bottom: var(--space-2);">💡 Want the full review for each tool?</h4>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: var(--space-3);">Click any tool below to read our detailed review.</p>
+          </div>
+          
+          <div style="text-align: center; margin-top: var(--space-5);">
+            <button class="btn btn-secondary" onclick="location.reload()">Start Over</button>
+            <a href="tools.html" class="btn btn-primary">Browse All Tools →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: var(--space-6);">
+        <button class="btn btn-secondary" id="btn-prev" style="visibility: hidden;">← Back</button>
+        <button class="btn btn-primary" id="btn-next" disabled>Next →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">T</div>
+            ToolForge
+          </a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tools.html" class="footer-link">Browse Tools</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" class="footer-link">Twitter / X</a>
+          <a href="rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge. All rights reserved.</div>
+        <div>Built with AI tools, for AI tool users.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const answers = { role: null, budget: null, priority: null, experience: null };
+    let currentStep = 1;
+    const totalSteps = 4;
+    
+    const stacks = {
+      writer_free: [
+        { name: "ChatGPT", purpose: "General writing & ideation", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Grammarly", purpose: "Grammar & clarity", price: "Free", color: "#15c39a", initials: "Gr", url: "tools/grammarly.html" },
+        { name: "Perplexity", purpose: "Research with sources", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+      ],
+      writer_paid: [
+        { name: "Claude Pro", purpose: "Long-form writing & analysis", price: "$20/mo", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Jasper AI", purpose: "Brand voice & marketing copy", price: "$49/mo", color: "#7928ca", initials: "Ja", url: "tools/jasper.html" },
+        { name: "Hemingway", purpose: "Readability", price: "$20 once", color: "#f59e0b", initials: "He", url: "tools/hemingway.html" },
+        { name: "Frase", purpose: "SEO optimization", price: "$30/mo", color: "#0ea5e9", initials: "Fr", url: "tools/frase.html" },
+      ],
+      designer_free: [
+        { name: "Midjourney", purpose: "Concept & mood boards", price: "$10/mo", color: "#1a1a2e", initials: "Mi", url: "tools/midjourney.html" },
+        { name: "Leonardo.AI", purpose: "Image gen with control", price: "Free tier", color: "#9333ea", initials: "Le", url: "tools/leonardo-ai.html" },
+        { name: "Ideogram", purpose: "Type in designs", price: "Free tier", color: "#5b21b6", initials: "Id", url: "tools/ideogram.html" },
+        { name: "Recraft", purpose: "Vector & icons", price: "Free tier", color: "#d97706", initials: "Re", url: "tools/recraft.html" },
+      ],
+      designer_paid: [
+        { name: "Midjourney v7", purpose: "Best art quality", price: "$30/mo", color: "#1a1a2e", initials: "Mi", url: "tools/midjourney.html" },
+        { name: "Krea AI", purpose: "Real-time design", price: "$10/mo", color: "#dc2626", initials: "Kr", url: "tools/krea.html" },
+        { name: "Runway Gen-4", purpose: "Video prototyping", price: "$12/mo", color: "#06b6d4", initials: "Ru", url: "tools/runway.html" },
+        { name: "Figma AI", purpose: "Inside Figma", price: "$15/mo", color: "#a259ff", initials: "Fi", url: "https://figma.com" },
+      ],
+      developer_free: [
+        { name: "ChatGPT", purpose: "Code generation", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Continue", purpose: "Open-source AI code", price: "Free", color: "#7c3aed", initials: "Co", url: "tools/continue.html" },
+        { name: "Perplexity", purpose: "Research docs", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+      ],
+      developer_paid: [
+        { name: "Cursor", purpose: "AI-first code editor", price: "$20/mo", color: "#000000", initials: "Cu", url: "tools/cursor.html" },
+        { name: "Claude Pro", purpose: "Best code review", price: "$20/mo", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Replit Agent", purpose: "Build apps from prompt", price: "$25/mo", color: "#f26207", initials: "Re", url: "tools/replit-agent.html" },
+        { name: "GitHub Copilot", purpose: "Native IDE AI", price: "$10/mo", color: "#000000", initials: "Co", url: "tools/github-copilot.html" },
+      ],
+      marketer_free: [
+        { name: "ChatGPT", purpose: "Copy & strategy", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Perplexity", purpose: "Market research", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+        { name: "Gamma", purpose: "Presentations", price: "Free tier", color: "#ec4899", initials: "Ga", url: "tools/gamma.html" },
+        { name: "Canva AI", purpose: "Design", price: "Free tier", color: "#00c4cc", initials: "Ca", url: "https://canva.com" },
+      ],
+      marketer_paid: [
+        { name: "Jasper AI", purpose: "Marketing copy at scale", price: "$49/mo", color: "#7928ca", initials: "Ja", url: "tools/jasper.html" },
+        { name: "Frase", purpose: "SEO content", price: "$30/mo", color: "#0ea5e9", initials: "Fr", url: "tools/frase.html" },
+        { name: "Make", purpose: "Marketing automation", price: "$9/mo", color: "#6366f1", initials: "Mk", url: "tools/make.html" },
+        { name: "Midjourney", purpose: "Ad creative", price: "$10/mo", color: "#1a1a2e", initials: "Mi", url: "tools/midjourney.html" },
+        { name: "Gamma", purpose: "Presentations", price: "$8/mo", color: "#ec4899", initials: "Ga", url: "tools/gamma.html" },
+      ],
+      founder_free: [
+        { name: "ChatGPT", purpose: "Default AI for everything", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Perplexity", purpose: "Customer & market research", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+        { name: "Gamma", purpose: "Pitch decks", price: "Free tier", color: "#ec4899", initials: "Ga", url: "tools/gamma.html" },
+        { name: "Notion AI", purpose: "Docs & notes", price: "Free trial", color: "#171717", initials: "No", url: "tools/notion-ai.html" },
+      ],
+      founder_paid: [
+        { name: "ChatGPT Plus", purpose: "Default AI", price: "$20/mo", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Claude Pro", purpose: "Long docs & analysis", price: "$20/mo", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Make", purpose: "Automate ops", price: "$9/mo", color: "#6366f1", initials: "Mk", url: "tools/make.html" },
+        { name: "Motion", purpose: "AI scheduling", price: "$34/mo", color: "#f59e0b", initials: "Mo", url: "tools/motion.html" },
+        { name: "Replit Agent", purpose: "Ship MVPs", price: "$25/mo", color: "#f26207", initials: "Re", url: "tools/replit-agent.html" },
+      ],
+      researcher_free: [
+        { name: "Elicit", purpose: "Academic paper search", price: "Free tier", color: "#0891b2", initials: "El", url: "tools/elicit.html" },
+        { name: "Perplexity", purpose: "Cited web research", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+        { name: "Consensus", purpose: "Evidence-based answers", price: "Free tier", color: "#0ea5e9", initials: "Co", url: "tools/consensus.html" },
+        { name: "ChatGPT", purpose: "Summarize & explain", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+      ],
+      researcher_paid: [
+        { name: "Elicit", purpose: "Literature reviews", price: "$10/mo", color: "#0891b2", initials: "El", url: "tools/elicit.html" },
+        { name: "Scite", purpose: "Smart citations", price: "$20/mo", color: "#1d4ed8", initials: "Sc", url: "tools/scite.html" },
+        { name: "Claude Pro", purpose: "Long doc analysis", price: "$20/mo", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Perplexity Pro", purpose: "Real-time research", price: "$20/mo", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+      ],
+      student_free: [
+        { name: "ChatGPT", purpose: "Homework help", price: "Free", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Claude", purpose: "Long essay review", price: "Free", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Perplexity", purpose: "Research with citations", price: "Free", color: "#1fb8cd", initials: "Pe", url: "tools/perplexity.html" },
+        { name: "Grammarly", purpose: "Grammar check", price: "Free", color: "#15c39a", initials: "Gr", url: "tools/grammarly.html" },
+        { name: "Quizlet AI", purpose: "Flashcards", price: "Free tier", color: "#4255ff", initials: "Qz", url: "https://quizlet.com" },
+      ],
+      student_paid: [
+        { name: "ChatGPT Plus", purpose: "Default AI for studying", price: "$20/mo", color: "#10a37f", initials: "CG", url: "tools/chatgpt.html" },
+        { name: "Claude Pro", purpose: "Essay review", price: "$20/mo", color: "#d97706", initials: "Cl", url: "tools/claude-3-7.html" },
+        { name: "Elicit", purpose: "Find papers", price: "$10/mo", color: "#0891b2", initials: "El", url: "tools/elicit.html" },
+        { name: "Notion AI", purpose: "Notes (free for .edu)", price: "Free / $10", color: "#171717", initials: "No", url: "tools/notion-ai.html" },
+      ],
+    };
+    
+    function getStackKey() {
+      const r = answers.role || "other";
+      const b = parseInt(answers.budget || 0);
+      const paid = b > 0;
+      const key = r + (paid ? "_paid" : "_free");
+      return stacks[key] ? key : (r + "_free");
+    }
+    
+    function renderResult() {
+      const key = getStackKey();
+      const stack = stacks[key] || stacks.writer_free;
+      const totalCost = stack.reduce((sum, t) => {
+        const m = t.price.match(/\$(\d+)/);
+        return sum + (m ? parseInt(m[1]) : 0);
+      }, 0);
+      
+      let html = '<h3 style="margin-bottom: var(--space-3);">Your Recommended Stack</h3>';
+      html += '<p style="font-size: 14px; color: var(--text-secondary); margin-bottom: var(--space-4);">Total monthly cost: <strong>$' + totalCost + '/mo</strong> · Click any tool for the full review.</p>';
+      stack.forEach(tool => {
+        html += '<a href="' + tool.url + '" class="picker-stack-item" style="text-decoration: none; color: inherit;">';
+        html += '  <div class="stack-logo" style="background: ' + tool.color + ';">' + tool.initials + '</div>';
+        html += '  <div class="stack-info"><div class="stack-name">' + tool.name + '</div><div class="stack-purpose">' + tool.purpose + '</div></div>';
+        html += '  <div class="stack-price">' + tool.price + '</div>';
+        html += '</a>';
+      });
+      html += '<div style="margin-top: var(--space-4); padding: var(--space-3); background: var(--bg-card); border-radius: var(--radius-md); font-size: 13px; color: var(--text-secondary);">';
+      html += '💡 <strong>How to start:</strong> Don't buy all of these at once. Pick the first one, use it daily for 2 weeks, then add the next. The mistake is buying 5 tools and using none. The right approach: master 1-2 at a time.';
+      html += '</div>';
+      
+      document.getElementById('picker-result').innerHTML = html;
+    }
+    
+    function updateUI() {
+      document.querySelectorAll('.picker-step').forEach(s => s.classList.remove('active'));
+      const target = document.querySelector('.picker-step[data-step="' + currentStep + '"]');
+      if (target) target.classList.add('active');
+      
+      document.getElementById('step-current').textContent = Math.min(currentStep, totalSteps);
+      const progress = currentStep > totalSteps ? 100 : (currentStep / totalSteps) * 100;
+      document.getElementById('progress-fill').style.width = progress + '%';
+      
+      document.getElementById('btn-prev').style.visibility = currentStep > 1 && currentStep <= totalSteps ? 'visible' : 'hidden';
+      
+      if (currentStep > totalSteps) {
+        document.getElementById('btn-next').style.display = 'none';
+        document.getElementById('btn-prev').style.display = 'none';
+        renderResult();
+      } else {
+        document.getElementById('btn-next').style.display = '';
+        // Check if current step has an answer
+        const stepEl = document.querySelector('.picker-step[data-step="' + currentStep + '"]');
+        const stepName = stepEl.querySelector('input[type=radio]')?.name;
+        document.getElementById('btn-next').disabled = !answers[stepName];
+      }
+    }
+    
+    function getStepName(step) {
+      const map = { 1: 'role', 2: 'budget', 3: 'priority', 4: 'experience' };
+      return map[step];
+    }
+    
+    document.querySelectorAll('.picker-option input[type=radio]').forEach(input => {
+      input.addEventListener('change', (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        answers[name] = value;
+        // Mark selected
+        e.target.closest('.picker-step').querySelectorAll('.picker-option').forEach(o => o.classList.remove('selected'));
+        e.target.closest('.picker-option').classList.add('selected');
+        // Enable next
+        document.getElementById('btn-next').disabled = false;
+      });
+    });
+    
+    document.getElementById('btn-next').addEventListener('click', () => {
+      if (currentStep <= totalSteps) {
+        currentStep++;
+        updateUI();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    
+    document.getElementById('btn-prev').addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    
+    updateUI();
+  </script>
+</body>
+</html>
