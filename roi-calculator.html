@@ -13,6 +13,7 @@
   <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
   <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
   <style>
@@ -43,7 +44,7 @@
     </div>
   </nav>
 
-  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+  <header style="padding: var(--space-8) 0 var(--space-6); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);" class="reveal">
     <div class="container">
       <div style="text-align: center; max-width: 700px; margin: 0 auto;">
         <div style="display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3);">— Free Tool</div>
@@ -204,7 +205,7 @@
       // Recommended tools
       const tools = TOOLS_BY_ROLE[role];
       const html = tools.map(t => `
-        <a href="${t.url}" target="_blank" rel="noopener sponsored" class="tool-card" style="margin-bottom: var(--space-2); text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3);">
+        <a href="${t.url}" target="_blank" rel="noopener sponsored" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="margin-bottom: var(--space-2); text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3);">
           <div style="width: 40px; height: 40px; border-radius: 10px; background: ${t.color}; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px; flex-shrink: 0;">${t.name[0]}</div>
           <div style="flex: 1;">
             <div style="font-weight: 500;">${t.name}</div>

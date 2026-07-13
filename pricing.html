@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Business Model — ToolForge</title>
+  <meta name="description" content="How ToolForge makes money (and why the site is free for you). Pricing for sponsored listings, affiliate disclosure, and our business model.">
+  <link rel="canonical" href="https://toolforge.surge.sh/pricing.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .price-card { padding: var(--space-5); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); position: relative; }
+    .price-card.featured { border-color: var(--accent); border-width: 2px; }
+    .price-card .badge-top { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .price-amount { font-size: 36px; font-weight: 700; letter-spacing: -1px; line-height: 1; margin: var(--space-3) 0 4px; }
+    .price-period { font-size: 14px; color: var(--text-tertiary); }
+    .price-features { list-style: none; padding: 0; margin: var(--space-4) 0; }
+    .price-features li { padding: 8px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 8px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="pricing.html" class="nav-link active">Pricing</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-8) 0 var(--space-5); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);" class="reveal">
+    <div class="container" style="text-align: center; max-width: 720px;">
+      <nav class="breadcrumb" style="margin-bottom: var(--space-3); justify-content: center;">
+        <a href="index.html">Home</a> <span>/</span> <span>Pricing</span>
+      </nav>
+      <h1 style="font-size: clamp(40px, 5vw, 56px); font-weight: 600; letter-spacing: -1.8px; margin-bottom: var(--space-3);">Pricing & Business Model</h1>
+      <p style="font-size: 19px; color: var(--text-secondary); line-height: 1.5;">ToolForge is free to use. Here's how we pay the bills — and why affiliate revenue never buys editorial rankings.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: var(--space-3);">For Tool Makers: Get in Front of 50,000+ Buyers</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-6); max-width: 600px; margin-left: auto; margin-right: auto;">Sponsored listings appear in a clearly-marked "Sponsored" section. They never affect our editorial rankings.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); max-width: 1000px; margin: 0 auto;">
+        <div class="price-card">
+          <h3 style="font-size: 18px; font-weight: 600;">Starter</h3>
+          <div class="price-amount">$99<span class="price-period">/mo</span></div>
+          <p style="color: var(--text-tertiary); font-size: 13px;">Best for indie makers</p>
+          <ul class="price-features">
+            <li>✓ Listing in 1 category</li>
+            <li>✓ "Sponsored" badge</li>
+            <li>✓ Link to your site</li>
+            <li>✓ Monthly impressions report</li>
+            <li>✓ 30-day minimum</li>
+          </ul>
+          <a href="sponsored.html" class="btn btn-secondary" style="width: 100%;">Get started</a>
+        </div>
+
+        <div class="price-card featured">
+          <span class="badge-top">Most Popular</span>
+          <h3 style="font-size: 18px; font-weight: 600;">Growth</h3>
+          <div class="price-amount">$249<span class="price-period">/mo</span></div>
+          <p style="color: var(--text-tertiary); font-size: 13px;">Best for funded startups</p>
+          <ul class="price-features">
+            <li>✓ Listing in 3 categories</li>
+            <li>✓ Featured in newsletter (1/mo)</li>
+            <li>✓ Quote in relevant blog posts</li>
+            <li>✓ Comparison page inclusion</li>
+            <li>✓ Custom tracking link</li>
+            <li>✓ Weekly analytics</li>
+          </ul>
+          <a href="sponsored.html" class="btn btn-primary" style="width: 100%;">Get started</a>
+        </div>
+
+        <div class="price-card">
+          <h3 style="font-size: 18px; font-weight: 600;">Enterprise</h3>
+          <div class="price-amount">$999<span class="price-period">/mo</span></div>
+          <p style="color: var(--text-tertiary); font-size: 13px;">Best for Series A+</p>
+          <ul class="price-features">
+            <li>✓ Everything in Growth</li>
+            <li>✓ Dedicated review (we test, you don't pay for it)</li>
+            <li>✓ Co-branded content</li>
+            <li>✓ Webinar co-promotion</li>
+            <li>✓ Quarterly strategy call</li>
+            <li>✓ Custom package available</li>
+          </ul>
+          <a href="sponsored.html" class="btn btn-secondary" style="width: 100%;">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-elevated);">
+    <div class="container" style="max-width: 800px;">
+      <h2 style="font-size: 28px; font-weight: 600; margin-bottom: var(--space-4); text-align: center;">Our Business Model — 100% Transparent</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-5);">
+        <div style="padding: var(--space-4); background: var(--bg-card); border-radius: var(--radius-lg);">
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: var(--space-2); color: #10b981;">💰 How we make money</h3>
+          <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+            <li>• <strong>40%</strong> — Sponsored listings</li>
+            <li>• <strong>35%</strong> — Affiliate links (when you buy a tool we recommend)</li>
+            <li>• <strong>15%</strong> — Newsletter sponsorships</li>
+            <li>• <strong>10%</strong> — Custom content (reviews, comparisons)</li>
+          </ul>
+        </div>
+
+        <div style="padding: var(--space-4); background: var(--bg-card); border-radius: var(--radius-lg);">
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: var(--space-2); color: #0a72ef;">🛡️ What we never do</h3>
+          <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+            <li>• ✗ Sell editorial rankings</li>
+            <li>• ✗ Accept payment for positive reviews</li>
+            <li>• ✗ Hide sponsored content</li>
+            <li>• ✗ Promote tools we haven't tested</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-6); padding: var(--space-5); background: var(--bg-card); border-radius: var(--radius-lg); border-left: 4px solid var(--accent);">
+        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: var(--space-2);">Affiliate Disclosure (FTC-compliant)</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Some links on ToolForge are affiliate links. If you click one and buy a tool, we may earn a small commission — at no extra cost to you. This never affects which tools we recommend or how we rank them. We only recommend tools we use ourselves.</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 600; margin: var(--space-7) 0 var(--space-3); text-align: center;">For Users: ToolForge is 100% Free</h2>
+      <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">No paywall, no premium tier, no signup. Every page, every review, every interactive tool — free forever.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 ToolForge. <a href="changelog.html" style="color: var(--text-tertiary);">v2.5</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

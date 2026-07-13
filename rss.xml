@@ -127,7 +127,7 @@
       <description>The AI stack that will 5x your coding productivity this year.</description>
     </item>
     <item>
-      <title>The 8 Best AI Tools for Doctors & Clinicians in 2026 (Save 10+ Hours/Week)</title>
+      <title>The 8 Best AI Tools for Doctors &amp; Clinicians in 2026 (Save 10+ Hours/Week)</title>
       <link>https://toolforge.io/blog/ai-tools-doctors-2026.html</link>
       <guid>https://toolforge.io/blog/ai-tools-doctors-2026.html</guid>
       <pubDate>Tue, 16 Jun 2026 12:34:14 +0000</pubDate>
@@ -146,6 +146,29 @@
       <guid>https://toolforge.io/blog/ai-tools-marketing-teams-2026.html</guid>
       <pubDate>Tue, 16 Jun 2026 12:34:14 +0000</pubDate>
       <description>10 AI tools for marketing teams in 2026. Content, SEO, ads, email, analytics. The honest list from VP Marketing at high-growth companies.</description>
+    </item>    <item>
+      <title>The 7 Best AI Tools for HR &amp; Recruiters in 2026 (Hire 3x Faster)</title>
+      <link>https://toolforge.io/blog/ai-tools-hr-recruiters-2026.html</link>
+      <description>Stop drowning in resumes. The exact AI stack HR teams and recruiters use to fill roles 3x faster in 2026.</description>
+      <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://toolforge.io/blog/ai-tools-hr-recruiters-2026.html</guid>
     </item>
+
+    <item>
+      <title>The 8 Best AI Tools for SEO in 2026 (Rank Faster, Write Smarter)</title>
+      <link>https://toolforge.io/blog/ai-tools-seo-2026.html</link>
+      <description>The 2026 SEO stack that actually ranks. AI tools for keyword research, content optimization, link building, and SERP analysis.</description>
+      <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://toolforge.io/blog/ai-tools-seo-2026.html</guid>
+    </item>
+
+    <item>
+      <title>The 7 Best AI Tools for Personal Finance in 2026 (Save 10+ Hours/Month)</title>
+      <link>https://toolforge.io/blog/ai-tools-personal-finance-2026.html</link>
+      <description>Stop dreading your finances. The AI stack that handles budgeting, investing, taxes, and bill negotiation automatically.</description>
+      <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://toolforge.io/blog/ai-tools-personal-finance-2026.html</guid>
+    </item>
+
   </channel>
 </rss>

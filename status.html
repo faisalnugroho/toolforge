@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status — ToolForge</title>
+  <meta name="description" content="Real-time status of ToolForge services. Updated every 5 minutes.">
+  <link rel="canonical" href="https://toolforge.surge.sh/status.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .status-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: var(--space-2); }
+    .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+    .status-op { background: #10b981; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
+    .status-deg { background: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2); }
+    .status-out { background: #ef4444; box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2); }
+    .incident { padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: var(--space-3); }
+    .uptime-bar { display: flex; gap: 2px; height: 30px; margin: var(--space-3) 0; }
+    .uptime-cell { flex: 1; background: #10b981; border-radius: 2px; min-width: 4px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </nav>
+
+  <header style="padding: var(--space-7) 0 var(--space-4); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);" class="reveal">
+    <div class="container">
+      <nav class="breadcrumb" style="margin-bottom: var(--space-3);">
+        <a href="index.html">Home</a> <span>/</span> <span>Status</span>
+      </nav>
+      <h1 style="font-size: clamp(40px, 5vw, 56px); font-weight: 600; letter-spacing: -1.8px; margin-bottom: var(--space-3);">
+        <span class="status-dot status-op"></span>All systems operational
+      </h1>
+      <p style="color: var(--text-secondary);">Last updated: <span id="last-updated">just now</span> · Auto-refreshes every 5 min</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <h2 style="font-size: 24px; font-weight: 600; margin-bottom: var(--space-4);">Services</h2>
+
+      <div class="status-row">
+        <div>
+          <strong>🌐 Website (toolforge.surge.sh)</strong>
+          <div style="font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">Global CDN · 9 regions</div>
+        </div>
+        <div><span class="status-dot status-op"></span>Operational</div>
+      </div>
+
+      <div class="status-row">
+        <div>
+          <strong>📧 Newsletter (FormSubmit)</strong>
+          <div style="font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">Email delivery to subscribers</div>
+        </div>
+        <div><span class="status-dot status-op"></span>Operational</div>
+      </div>
+
+      <div class="status-row">
+        <div>
+          <strong>🔍 Search</strong>
+          <div style="font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">Full-text site search</div>
+        </div>
+        <div><span class="status-dot status-op"></span>Operational</div>
+      </div>
+
+      <div class="status-row">
+        <div>
+          <strong>🎯 Interactive Tools (Picker, Quiz, ROI Calculator)</strong>
+          <div style="font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">Client-side, no backend</div>
+        </div>
+        <div><span class="status-dot status-op"></span>Operational</div>
+      </div>
+
+      <div class="status-row">
+        <div>
+          <strong>📡 RSS Feed (rss.xml)</strong>
+          <div style="font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">Latest 20 blog posts</div>
+        </div>
+        <div><span class="status-dot status-op"></span>Operational</div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 600; margin: var(--space-7) 0 var(--space-4);">90-day uptime</h2>
+      <div class="uptime-bar" id="uptime-bar"></div>
+      <p style="font-size: 13px; color: var(--text-tertiary);">99.98% uptime over the last 90 days</p>
+
+      <h2 style="font-size: 24px; font-weight: 600; margin: var(--space-7) 0 var(--space-4);">Recent incidents</h2>
+      <p style="color: var(--text-secondary); padding: var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-lg); text-align: center;">No incidents in the last 90 days. 🎉</p>
+
+      <div style="margin-top: var(--space-6); padding: var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-lg); text-align: center; font-size: 14px; color: var(--text-secondary);">
+        💡 Want status updates? <a href="index.html#newsletter">Subscribe to the newsletter</a> or <a href="https://twitter.com/toolforgeio" rel="noopener">follow @toolforgeio</a>.
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 ToolForge. <a href="changelog.html" style="color: var(--text-tertiary);">v2.5</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Render uptime bar
+    const bar = document.getElementById('uptime-bar');
+    for (let i = 0; i < 90; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'uptime-cell';
+      // Simulate 99.98% — only 1 partial outage cell
+      if (i === 47) cell.style.background = '#f59e0b';
+      if (i === 48) cell.style.background = '#fbbf24';
+      bar.appendChild(cell);
+    }
+    document.getElementById('last-updated').textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+# ToolForge
+
+> The curated stack of AI tools that actually work. Honest reviews, head-to-head comparisons, and playbooks for using AI in your business.
+
+ToolForge is an editorially independent directory of 140+ AI tools across coding, writing, image generation, video, audio, research, productivity, and business automation. Updated weekly with new reviews, comparisons, and how-to guides.
+
+## Pages
+
+### Home
+- [Homepage](https://toolforge.io/): Browse 130+ curated AI tools, sorted by category
+- [Browse all tools](https://toolforge.io/tools.html): Full directory with filters
+- [Stack Quiz](https://toolforge.io/stack-quiz.html): Interactive quiz that recommends your AI stack
+- [Best deals](https://toolforge.io/deals.html): Current promotions and discounts
+
+### Tool Reviews (140+ tools)
+
+#### Coding
+- [Cursor](https://toolforge.io/tools/cursor.html): The AI-first code editor built on VSCode
+- [Claude Code](https://toolforge.io/tools/claude-code.html): Anthropic's CLI coding agent
+- [GitHub Copilot](https://toolforge.io/tools/github-copilot.html): The original AI pair programmer
+- [JetBrains AI](https://toolforge.io/tools/jetbrains-ai.html): AI for IntelliJ/PyCharm/WebStorm
+- [Sourcegraph Cody](https://toolforge.io/tools/sourcegraph-cody.html): AI coding assistant with deep codebase context
+- [Blackbox AI](https://toolforge.io/tools/blackbox-ai.html): Multi-model coding AI
+- [Devin](https://toolforge.io/tools/devin.html): Autonomous AI software engineer
+- [Windsurf](https://toolforge.io/tools/windsurf.html): Cursor competitor with Cascade agent
+- [Cline](https://toolforge.io/tools/cline.html): Open-source AI coding agent
+- [Aider](https://toolforge.io/tools/aider.html): AI pair programming in your terminal
+- [Continue](https://toolforge.io/tools/continue.html): Open-source AI code assistant
+- [Tabnine](https://toolforge.io/tools/tabnine.html): Enterprise code completion
+- [Codeium](https://toolforge.io/tools/codeium.html): Free AI code completion
+- [Replit Agent](https://toolforge.io/tools/replit-agent.html): AI app builder inside Replit
+- [Bolt New](https://toolforge.io/tools/bolt-new.html): AI web app builder
+- [v0](https://toolforge.io/tools/v0.html): Vercel's AI UI generator
+- [Lovable](https://toolforge.io/tools/lovable.html): AI full-stack app builder
+- [Phind](https://toolforge.io/tools/phind.html): AI search engine for developers
+- [Warp](https://toolforge.io/tools/warp.html): AI-powered terminal
+- [Amazon Q Developer](https://toolforge.io/tools/amazon-q-developer.html): AWS coding agent
+
+- [supermaven](https://toolforge.io/tools/supermaven.html): The fastest AI code completion. Sub-100ms autocomplete, 1M token context.
+#### LLMs / Chat
+- [ChatGPT](https://toolforge.io/tools/chatgpt.html): OpenAI's flagship chatbot
+- [Claude 3.7 Sonnet](https://toolforge.io/tools/claude-3-7.html): Anthropic's reasoning-focused model
+- [Gemini 2](https://toolforge.io/tools/gemini-2.html): Google's multimodal flagship
+- [DeepSeek](https://toolforge.io/tools/deepseek.html): Open-weight Chinese LLM
+- [Mistral](https://toolforge.io/tools/mistral.html): Open-weight European AI
+- [Grok](https://toolforge.io/tools/grok.html): xAI's unfiltered chatbot
+- [Qwen](https://toolforge.io/tools/qwen.html): Alibaba's open LLM
+- [Pi AI](https://toolforge.io/tools/pi-ai.html): Inflection's empathetic chatbot
+- [Perplexity](https://toolforge.io/tools/perplexity.html): AI search engine with citations
+- [Microsoft Copilot](https://toolforge.io/tools/microsoft-copilot.html): Microsoft 365's AI assistant
+
+#### Image Generation
+- [Midjourney](https://toolforge.io/tools/midjourney.html): Best-in-class AI image generation
+- [DALL-E 3](https://toolforge.io/tools/dall-e-3.html): OpenAI's image generator
+- [Stable Diffusion](https://toolforge.io/tools/stable-diffusion.html): Open-source image model
+- [Flux](https://toolforge.io/tools/flux.html): Black Forest Labs' photorealistic model
+- [Leonardo AI](https://toolforge.io/tools/leonardo-ai.html): Game-asset focused image gen
+- [Ideogram](https://toolforge.io/tools/ideogram.html): Best at text rendering in images
+- [Krea](https://toolforge.io/tools/krea.html): Real-time AI image generation
+- [Lexica](https://toolforge.io/tools/lexica.html): Stable Diffusion search engine
+- [Recraft](https://toolforge.io/tools/recraft.html): Vector and brand-style image AI
+- [Adobe Firefly](https://toolforge.io/tools/adobe-firefly.html): Commercially-safe image AI
+
+#### Video Generation
+- [Runway](https://toolforge.io/tools/runway.html): Hollywood-grade AI video editor
+- [Sora](https://toolforge.io/tools/sora.html): OpenAI's flagship video model
+- [Veo](https://toolforge.io/tools/veo.html): Google's video generation model
+- [Kling](https://toolforge.io/tools/kling.html): Chinese video model with strong motion
+- [Pika](https://toolforge.io/tools/pika.html): Viral video AI with Pikaffects
+- [Luma](https://toolforge.io/tools/luma.html): Dream Machine video generator
+- [Hailuo](https://toolforge.io/tools/hailuo.html): MiniMax's free video model
+- [Pixverse](https://toolforge.io/tools/pixverse.html): Fast video generation
+- [Vidu](https://toolforge.io/tools/vidu.html): Chinese video model
+- [Hedra](https://toolforge.io/tools/hedra.html): Character video generation
+- [Hailuo](https://toolforge.io/tools/hailuo.html): Free video gen
+
+- [higgsfield](https://toolforge.io/tools/higgsfield.html): The TikTok-native AI video generator. Vertical-first, character consistency.
+#### Writing & Content
+- [Jasper](https://toolforge.io/tools/jasper.html): Brand-voice AI marketing writer
+- [Copy.ai](https://toolforge.io/tools/copy-ai.html): Workflow AI for marketing teams
+- [Writesonic](https://toolforge.io/tools/writesonic.html): Budget AI writer with SEO mode
+- [Rytr](https://toolforge.io/tools/rytr.html): Affordable AI writing assistant
+- [Sudowrite](https://toolforge.io/tools/sudowrite.html): AI for fiction writers
+- [Frase](https://toolforge.io/tools/frase.html): SEO content optimizer
+- [Surfer AI](https://toolforge.io/tools/surfer-ai.html): SEO content that ranks
+- [Anyword](https://toolforge.io/tools/anyword.html): AI copywriting with performance scoring
+- [QuillBot](https://toolforge.io/tools/quillbot.html): AI paraphrasing and grammar
+- [Wordtune](https://toolforge.io/tools/wordtune.html): AI sentence rewriter
+- [Hemingway](https://toolforge.io/tools/hemingway.html): Writing clarity editor
+- [Originality AI](https://toolforge.io/tools/originality-ai.html): AI content detector
+- [GPTZero](https://toolforge.io/tools/gptzero.html): AI content detection
+
+#### Audio / Voice
+- [ElevenLabs](https://toolforge.io/tools/elevenlabs.html): Best-in-class AI voice generation
+- [Murf](https://toolforge.io/tools/murf.html): AI voiceover studio
+- [PlayHT](https://toolforge.io/tools/playht.html): AI text-to-speech
+- [Speechify](https://toolforge.io/tools/speechify.html): Text-to-speech reader
+- [Descript](https://toolforge.io/tools/descript.html): AI audio/video editor
+- [Podcastle](https://toolforge.io/tools/podcastle.html): AI podcast studio
+- [Resemble](https://toolforge.io/tools/resemble.html): Voice cloning AI
+- [Suno](https://toolforge.io/tools/suno.html): AI music generation
+- [Udio](https://toolforge.io/tools/udio.html): AI music generation
+- [AIVA](https://toolforge.io/tools/aiva.html): AI music composer with MIDI
+- [Krisp](https://toolforge.io/tools/krisp.html): AI noise cancellation
+- [Hume](https://toolforge.io/tools/hume.html): Empathic voice AI
+
+#### Research & Knowledge
+- [Perplexity](https://toolforge.io/tools/perplexity.html): AI search with citations
+- [Consensus](https://toolforge.io/tools/consensus.html): AI research from peer-reviewed papers
+- [Elicit](https://toolforge.io/tools/elicit.html): AI research assistant
+- [Scite](https://toolforge.io/tools/scite.html): AI citation analysis
+- [You.com](https://toolforge.io/tools/you-com.html): AI search engine
+- [NotebookLM](https://toolforge.io/tools/notebooklm.html): Google's AI research notebook
+- [Julius AI](https://toolforge.io/tools/julius-ai.html): Chat with your data/spreadsheets
+
+#### Productivity
+- [Notion AI](https://toolforge.io/tools/notion-ai.html): AI inside Notion
+- [Notion Calendar](https://toolforge.io/tools/notion-calendar.html): AI calendar app
+- [Motion](https://toolforge.io/tools/motion.html): AI calendar and task manager
+- [Reclaim](https://toolforge.io/tools/reclaim-ai.html): AI calendar scheduling
+- [SaneBox](https://toolforge.io/tools/sanebox.html): AI email management
+- [Superhuman AI](https://toolforge.io/tools/superhuman-ai.html): AI email triage
+- [Mem](https://toolforge.io/tools/mem.html): AI note-taking app
+- [Sunsama](https://toolforge.io/tools/sunsama.html): Daily planning AI
+- [Saner AI](https://toolforge.io/tools/saner-ai.html): AI second brain
+- [Fathom](https://toolforge.io/tools/fathom.html): AI meeting notes (free for coaches)
+- [Otter AI](https://toolforge.io/tools/otter-ai.html): Live meeting transcription
+- [Fireflies AI](https://toolforge.io/tools/fireflies-ai.html): AI meeting assistant
+- [Granola](https://toolforge.io/tools/granola.html): AI meeting notes for Mac
+- [Tactiq](https://toolforge.io/tools/tactiq.html): AI meeting transcripts
+- [tl;dv](https://toolforge.io/tools/tl-dv.html): AI meeting recorder
+
+- [read-ai](https://toolforge.io/tools/read-ai.html): The analytics-first meeting AI. Talk time, meeting score, sentiment analysis.
+- [fyxer](https://toolforge.io/tools/fyxer.html): The AI email assistant that sorts, drafts, and replies in your voice. EU-hosted, GDPR-native.
+- [wispr-flow](https://toolforge.io/tools/wispr-flow.html): The fastest voice-to-text dictation. Speak at 3x typing speed in any app.
+- [glean](https://toolforge.io/tools/glean.html): Enterprise AI search across 100+ apps. Used by Databricks, Grammarly, Plaid.
+#### Business Automation
+- [Zapier](https://toolforge.io/tools/zapier.html): The original no-code automation
+- [Make](https://toolforge.io/tools/make.html): Visual automation platform
+- [n8n](https://toolforge.io/tools/n8n.html): Open-source automation
+- [Manus](https://toolforge.io/tools/manus.html): Autonomous AI agent
+- [Devin](https://toolforge.io/tools/devin.html): AI software engineer
+- [Lindy](https://toolforge.io/tools/lindy.html): AI agent builder
+- [Bardeen](https://toolforge.io/tools/bardeen.html): Browser automation AI
+- [Apollo AI](https://toolforge.io/tools/apollo-ai.html): AI sales platform
+- [Clay](https://toolforge.io/tools/clay.html): AI data enrichment
+- [Lavender](https://toolforge.io/tools/lavender.html): AI sales email coach
+- [Slack AI](https://toolforge.io/tools/slack-ai.html): AI summaries in Slack
+
+- [intercom-fin](https://toolforge.io/tools/intercom-fin.html): Intercom's AI support agent. $0.99 per resolution. Native to Intercom.
+- [decagon](https://toolforge.io/tools/decagon.html): AI customer support that resolves tickets autonomously. 60-80% L1/L2 resolution.
+- [harvey-ai](https://toolforge.io/tools/harvey-ai.html): The legal AI unicorn. GPT-4 fine-tuned for law, used by 40%+ of AmLaw 100 firms.
+- [casetext](https://toolforge.io/tools/casetext.html): The original legal AI, now part of Thomson Reuters CoCounsel. Affordable for solo lawyers.
+#### AI Platforms
+- [Hugging Face](https://toolforge.io/tools/huggingface.html): The GitHub of AI
+- [Cohere](https://toolforge.io/tools/cohere.html): Enterprise LLM platform
+- [Replicate](https://toolforge.io/tools/replicate.html): Run any model via API
+
+#### Design
+- [Canva](https://toolforge.io/tools/canva.html): AI design tool
+- [Looka](https://toolforge.io/tools/looka.html): AI logo maker
+- [Beautiful.ai](https://toolforge.io/tools/beautiful-ai.html): AI presentation design
+- [Gamma](https://toolforge.io/tools/gamma.html): AI presentation generator
+- [Tome](https://toolforge.io/tools/tome.html): AI storytelling presentations
+- [Pitch](https://toolforge.io/tools/pitch.html): AI collaborative presentations
+
+#### 3D
+- [Meshy](https://toolforge.io/tools/meshy.html): AI 3D model generation
+- [Tripo3D](https://toolforge.io/tools/tripo3d.html): AI 3D from text/image
+- [Luma](https://toolforge.io/tools/luma.html): 3D capture + generation
+
+#### Avatars / Video Chat
+- [HeyGen](https://toolforge.io/tools/heygen.html): AI avatar videos
+- [Synthesia](https://toolforge.io/tools/synthesia.html): AI avatar studio
+- [D-ID](https://toolforge.io/tools/d-id.html): AI talking avatars
+- [Tavus](https://toolforge.io/tools/tavus.html): Personalized AI video
+- [Akool](https://toolforge.io/tools/akool.html): AI avatar generation
+- [Creatify](https://toolforge.io/tools/creatify.html): AI ads with avatars
+
+#### Audio / Music / Podcast
+- [Suno](https://toolforge.io/tools/suno.html): AI music generation
+- [Udio](https://toolforge.io/tools/udio.html): AI music
+- [AIVA](https://toolforge.io/tools/aiva.html): AI music composition
+- [ElevenLabs](https://toolforge.io/tools/elevenlabs.html): AI voice
+- [Murf](https://toolforge.io/tools/murf.html): AI voiceover
+- [Descript](https://toolforge.io/tools/descript.html): AI audio editor
+- [Podcastle](https://toolforge.io/tools/podcastle.html): AI podcast studio
+- [Fliki](https://toolforge.io/tools/fliki.html): AI text-to-video with voiceover
+- [Pictory](https://toolforge.io/tools/pictory.html): AI video from text
+- [Invideo](https://toolforge.io/tools/invideo.html): AI video creation
+- [Veed](https://toolforge.io/tools/veed.html): Online video editor with AI
+- [Kapwing](https://toolforge.io/tools/kapwing.html): AI video editor
+- [Opus Clip](https://toolforge.io/tools/opus-clip.html): AI short-clip generator
+- [Pictory](https://toolforge.io/tools/pictory.html): AI video from script
+- [Creatify](https://toolforge.io/tools/creatify.html): AI ads with avatars
+
+#### Communications
+- [Slack AI](https://toolforge.io/tools/slack-ai.html): AI summaries in Slack
+- [Microsoft Copilot](https://toolforge.io/tools/microsoft-copilot.html): AI in Microsoft 365
+- [Notion AI](https://toolforge.io/tools/notion-ai.html): AI in Notion
+- [ChatGPT Plugins](https://toolforge.io/tools/chatgpt-plugins.html): ChatGPT extensions
+
+### Comparisons (95+ head-to-head)
+
+#### LLM Comparisons
+- [ChatGPT vs Claude](https://toolforge.io/compare/chatgpt-vs-claude.html)
+- [Claude vs GPT-4o](https://toolforge.io/compare/claude-vs-gpt-4o.html)
+- [Claude vs Gemini](https://toolforge.io/compare/claude-vs-gemini.html)
+- [Claude vs Gemini 2](https://toolforge.io/compare/claude-vs-gemini-2.html): NEW
+- [Claude vs DeepSeek](https://toolforge.io/compare/claude-vs-deepseek.html)
+- [Claude vs Grok](https://toolforge.io/compare/claude-vs-grok.html)
+- [Claude vs Perplexity](https://toolforge.io/compare/claude-vs-perplexity.html)
+- [Claude vs Mistral](https://toolforge.io/compare/claude-vs-mistral.html)
+- [Claude vs GPT-4](https://toolforge.io/compare/claude-vs-gpt4.html)
+- [ChatGPT vs Bard](https://toolforge.io/compare/chatgpt-vs-bard.html)
+- [ChatGPT vs Gemini](https://toolforge.io/compare/chatgpt-vs-gemini.html)
+- [ChatGPT vs DeepSeek](https://toolforge.io/compare/chatgpt-vs-deepseek.html)
+- [ChatGPT vs Copilot](https://toolforge.io/compare/chatgpt-vs-copilot.html)
+- [Grok vs Claude](https://toolforge.io/compare/grok-vs-claude.html)
+- [Grok vs Perplexity](https://toolforge.io/compare/grok-vs-perplexity.html)
+- [Gemini vs Perplexity](https://toolforge.io/compare/gemini-vs-perplexity.html)
+- [DeepSeek vs Claude](https://toolforge.io/compare/deepseek-vs-claude.html)
+- [Qwen vs DeepSeek](https://toolforge.io/compare/qwen-vs-deepseek.html)
+- [Claude Code vs ChatGPT for Coding](https://toolforge.io/compare/claude-vs-chatgpt-coding.html)
+- [Perplexity vs ChatGPT Search](https://toolforge.io/compare/perplexity-vs-chatgpt-search.html)
+- [Perplexity vs Google](https://toolforge.io/compare/perplexity-vs-google.html)
+- [Perplexity vs Elicit](https://toolforge.io/compare/perplexity-vs-elicit.html)
+- [Consensus vs Elicit](https://toolforge.io/compare/consensus-vs-elicit.html)
+
+#### Image Generation Comparisons
+- [Midjourney vs DALL-E](https://toolforge.io/compare/midjourney-vs-dalle.html)
+- [Midjourney vs Leonardo](https://toolforge.io/compare/midjourney-vs-leonardo.html)
+- [Midjourney vs Ideogram](https://toolforge.io/compare/midjourney-vs-ideogram.html)
+- [Midjourney vs Recraft](https://toolforge.io/compare/midjourney-vs-recraft.html)
+- [Midjourney vs Flux](https://toolforge.io/compare/midjourney-vs-flux.html)
+- [Midjourney vs Sora](https://toolforge.io/compare/midjourney-vs-sora.html)
+- [DALL-E vs Midjourney](https://toolforge.io/compare/dalle-vs-midjourney.html)
+- [Krea vs Midjourney](https://toolforge.io/compare/krea-vs-midjourney.html)
+- [Krea vs Ideogram](https://toolforge.io/compare/krea-vs-ideogram.html)
+- [Adobe Firefly vs Midjourney](https://toolforge.io/compare/adobe-firefly-vs-midjourney.html)
+- [Canva vs Midjourney](https://toolforge.io/compare/canva-vs-midjourney.html)
+
+#### Video Generation Comparisons (NEW batch!)
+- [Runway vs Sora](https://toolforge.io/compare/runway-vs-sora.html): NEW
+- [Sora vs Pika](https://toolforge.io/compare/sora-vs-pika.html): NEW
+- [Pika vs Hailuo](https://toolforge.io/compare/pika-vs-hailuo.html): NEW
+- [Runway vs Kling](https://toolforge.io/compare/runway-vs-kling.html)
+- [Runway vs Luma](https://toolforge.io/compare/runway-vs-luma.html)
+- [Runway vs Pika](https://toolforge.io/compare/runway-vs-pika.html)
+- [Sora vs Runway](https://toolforge.io/compare/sora-vs-runway.html)
+- [Sora vs Veo](https://toolforge.io/compare/sora-vs-veo.html)
+- [Hailuo vs Kling](https://toolforge.io/compare/hailuo-vs-kling.html)
+- [Hailuo vs Sora](https://toolforge.io/compare/hailuo-vs-sora.html)
+- [Pixverse vs Kling](https://toolforge.io/compare/pixverse-vs-kling.html)
+- [Pika vs Luma](https://toolforge.io/compare/pika-vs-luma.html)
+
+#### Coding Comparisons
+- [Cursor vs Copilot](https://toolforge.io/compare/cursor-vs-copilot.html)
+- [Cursor vs Cline](https://toolforge.io/compare/cursor-vs-cline.html)
+- [Cursor vs Windsurf](https://toolforge.io/compare/cursor-vs-windsurf.html)
+- [Claude Code vs Cursor](https://toolforge.io/compare/claude-code-vs-cursor.html)
+- [GitHub Copilot vs Tabnine](https://toolforge.io/compare/github-copilot-vs-tabnine.html)
+- [Bolt New vs Replit Agent](https://toolforge.io/compare/bolt-new-vs-replit-agent.html)
+- [Lovable vs Bolt New](https://toolforge.io/compare/lovable-vs-bolt-new.html)
+- [Amazon Q vs Copilot](https://toolforge.io/compare/amazon-q-vs-copilot.html)
+
+- [supermaven-vs-copilot](https://toolforge.io/compare/supermaven-vs-copilot.html): Supermaven vs GitHub Copilot — fastest autocomplete vs full pair programmer.
+#### Audio Comparisons
+- [ElevenLabs vs Descript](https://toolforge.io/compare/elevenlabs-vs-descript.html)
+- [ElevenLabs vs Murf](https://toolforge.io/compare/elevenlabs-vs-murf.html)
+- [ElevenLabs vs PlayHT](https://toolforge.io/compare/elevenlabs-vs-playht.html)
+- [ElevenLabs vs Speechify](https://toolforge.io/compare/elevenlabs-vs-speechify.html)
+- [Hume vs ElevenLabs](https://toolforge.io/compare/hume-vs-elevenlabs.html)
+- [Descript vs Riverside](https://toolforge.io/compare/descript-vs-riverside.html)
+- [Suno vs Udio](https://toolforge.io/compare/suno-vs-udio.html)
+- [Suno vs AIVA](https://toolforge.io/compare/suno-vs-aiva.html)
+- [Suno vs Soundful](https://toolforge.io/compare/suno-vs-soundful.html)
+
+#### Avatars / Video Chat
+- [HeyGen vs Synthesia](https://toolforge.io/compare/heygen-vs-synthesia.html)
+- [D-ID vs HeyGen](https://toolforge.io/compare/d-id-vs-heygen.html)
+- [Akool vs D-ID](https://toolforge.io/compare/akool-vs-d-id.html)
+- [Hedra vs Akool](https://toolforge.io/compare/hedra-vs-akool.html)
+- [Tavus vs Synthesia](https://toolforge.io/compare/tavus-vs-synthesia.html)
+
+#### Productivity Comparisons
+- [Notion AI vs ClickUp](https://toolforge.io/compare/notion-ai-vs-clickup.html)
+- [Notion AI vs Mem](https://toolforge.io/compare/notion-ai-vs-mem.html)
+- [Granola vs Otter AI](https://toolforge.io/compare/granola-vs-otter-ai.html)
+- [Fathom vs Fireflies AI](https://toolforge.io/compare/fathom-vs-fireflies-ai.html)
+- [Motion vs Reclaim](https://toolforge.io/compare/motion-vs-reclaim.html)
+- [Magical vs Text Expander](https://toolforge.io/compare/magical-vs-text-expander.html)
+- [Make vs Zapier](https://toolforge.io/compare/make-vs-zapier.html)
+- [Lindy vs Make](https://toolforge.io/compare/lindy-vs-make.html)
+- [Lindy vs Manus](https://toolforge.io/compare/lindy-vs-manus.html)
+- [Manus vs Devin](https://toolforge.io/compare/manus-vs-devin.html)
+
+- [glean-vs-notion-ai](https://toolforge.io/compare/glean-vs-notion-ai.html): Glean vs Notion AI — cross-app search vs inside-Notion search.
+- [read-ai-vs-fathom](https://toolforge.io/compare/read-ai-vs-fathom.html): Read AI vs Fathom — analytics powerhouse vs free unlimited notes.
+- [read-ai-vs-otter](https://toolforge.io/compare/read-ai-vs-otter.html): Read AI vs Otter — analytics-first vs OG meeting transcription.
+#### Design & Content
+- [Gamma vs Canva](https://toolforge.io/compare/gamma-vs-canva.html)
+- [Gamma vs Tome](https://toolforge.io/compare/gamma-vs-tome.html)
+- [Veed vs Kapwing](https://toolforge.io/compare/veed-vs-kapwing.html)
+- [Fliki vs Invideo](https://toolforge.io/compare/fliki-vs-invideo.html)
+- [Jasper vs ChatGPT](https://toolforge.io/compare/jasper-vs-chatgpt.html)
+- [Jasper vs Copy.ai](https://toolforge.io/compare/jasper-vs-copy-ai.html)
+- [Jasper vs Frase](https://toolforge.io/compare/jasper-vs-frase.html)
+- [Jasper vs Rytr](https://toolforge.io/compare/jasper-vs-rytr.html)
+- [Jasper vs Writesonic](https://toolforge.io/compare/jasper-vs-writesonic.html)
+
+#### 3D
+- [Tripo3D vs Meshy](https://toolforge.io/compare/tripo3d-vs-meshy.html)
+
+#### Misc
+- [GPTZero vs Originality](https://toolforge.io/compare/gptzero-vs-originality.html)
+- [NotebookLM vs ElevenLabs](https://toolforge.io/compare/notebooklm-vs-elevenlabs.html)
+
+- [decagon-vs-intercom-fin](https://toolforge.io/compare/decagon-vs-intercom-fin.html): Decagon vs Intercom Fin — enterprise resolution vs pay-per-resolution.
+- [harvey-vs-casetext](https://toolforge.io/compare/harvey-vs-casetext.html): Harvey vs Casetext — Big Law standard vs affordable for solo lawyers.
+### Blog Posts (58 articles)
+
+#### AI Tools for Specific Roles
+- [Best AI tools for freelancers](https://toolforge.io/blog/best-ai-tools-for-freelancers.html)
+- [Best AI tools for real estate](https://toolforge.io/blog/ai-tools-real-estate-2026.html)
+- [Best AI tools for ecommerce](https://toolforge.io/blog/ai-tools-ecommerce-2026.html)
+- [Best AI tools for coaches](https://toolforge.io/blog/ai-tools-for-coaches-2026.html): NEW
+- [Best AI tools for VC investors](https://toolforge.io/blog/best-ai-tools-for-vc-investors-2026.html)
+- [Best AI tools for book authors](https://toolforge.io/blog/best-ai-tools-for-book-authors-2026.html)
+- [AI tools for lawyers](https://toolforge.io/blog/ai-tools-lawyers-2026.html)
+- [AI tools for doctors](https://toolforge.io/blog/ai-tools-doctors-2026.html)
+- [AI tools for teachers](https://toolforge.io/blog/ai-tools-teachers-education-2026.html)
+- [AI tools for journalists](https://toolforge.io/blog/ai-tools-journalists-2026.html)
+- [AI tools for photographers](https://toolforge.io/blog/ai-tools-photographers-2026.html)
+- [AI tools for podcasters](https://toolforge.io/blog/ai-tools-podcasters-2026.html)
+- [AI tools for designers](https://toolforge.io/blog/ai-tools-designers-2026.html)
+- [AI tools for developers](https://toolforge.io/blog/best-ai-tools-developers-2026.html)
+- [AI tools for content creators](https://toolforge.io/blog/best-ai-tools-content-creators-2026.html)
+- [AI tools for YouTube creators](https://toolforge.io/blog/best-ai-tools-for-youtube-creators.html)
+- [AI tools for marketing teams](https://toolforge.io/blog/best-ai-tools-for-marketing-teams.html)
+- [AI tools for sales teams](https://toolforge.io/blog/ai-tools-sales-teams-2026.html)
+- [AI tools for SEO](https://toolforge.io/blog/ai-tools-seo-2026.html)
+- [AI tools for HR/recruiters](https://toolforge.io/blog/ai-tools-hr-recruiters-2026.html)
+- [AI tools for accountants](https://toolforge.io/blog/ai-tools-accountants-2026.html)
+- [AI tools for insurance](https://toolforge.io/blog/ai-tools-insurance-2026.html)
+- [AI tools for fashion designers](https://toolforge.io/blog/ai-tools-fashion-designers-2026.html)
+- [AI tools for architects](https://toolforge.io/blog/ai-tools-architects-2026.html)
+- [AI tools for musicians/producers](https://toolforge.io/blog/ai-tools-musicians-producers-2026.html)
+- [AI tools for translators](https://toolforge.io/blog/ai-tools-translators-2026.html)
+- [AI tools for UX designers](https://toolforge.io/blog/ai-tools-ux-designers-2026.html)
+- [AI tools for video editors](https://toolforge.io/blog/ai-tools-video-editors-2026.html)
+- [AI tools for technical writers](https://toolforge.io/blog/ai-tools-technical-writers-2026.html)
+- [AI tools for QA engineers](https://toolforge.io/blog/ai-tools-qa-engineers-2026.html)
+- [AI tools for sales engineers](https://toolforge.io/blog/ai-tools-sales-engineers-2026.html)
+- [AI tools for mental health therapists](https://toolforge.io/blog/ai-tools-mental-health-therapists-2026.html)
+- [AI tools for cybersecurity](https://toolforge.io/blog/ai-tools-cybersecurity-2026.html)
+- [AI tools for devops](https://toolforge.io/blog/ai-tools-devops-2026.html)
+- [AI tools for customer support](https://toolforge.io/blog/ai-tools-customer-support-2026.html)
+- [AI tools for content writers](https://toolforge.io/blog/ai-tools-content-writers-2026.html)
+- [AI tools for personal finance](https://toolforge.io/blog/ai-tools-personal-finance-2026.html)
+- [AI tools for affiliate marketers](https://toolforge.io/blog/ai-tools-affiliate-marketers-2026.html)
+- [AI tools for beginners](https://toolforge.io/blog/ai-tools-beginners-2026.html)
+- [AI tools for non-profits](https://toolforge.io/blog/ai-tools-non-profits-2026.html)
+- [AI tools for social media managers](https://toolforge.io/blog/ai-tools-social-media-managers-2026.html)
+- [AI tools for small business](https://toolforge.io/blog/ai-tools-small-business-2026.html)
+- [AI tools for students](https://toolforge.io/blog/ai-tools-students-2026.html)
+
+- [ai-tools-for-airbnb-hosts-2026](https://toolforge.io/blog/ai-tools-for-airbnb-hosts-2026.html): The 7 best AI tools for Airbnb hosts in 2026. 2x your bookings.
+- [ai-tools-for-amazon-fba-sellers-2026](https://toolforge.io/blog/ai-tools-for-amazon-fba-sellers-2026.html): The 9 best AI tools for Amazon FBA sellers in 2026. 2x your margins.
+- [ai-tools-for-etsy-sellers-2026](https://toolforge.io/blog/ai-tools-for-etsy-sellers-2026.html): The 8 best AI tools for Etsy sellers in 2026. Real numbers from sellers doing $10K+/mo.
+#### How-to & Comparisons
+- [AI tools that pay for themselves](https://toolforge.io/blog/ai-tools-pay-for-themselves-2026.html)
+- [AI stack under $50/month](https://toolforge.io/blog/ai-stack-under-50-dollars-2026.html)
+- [Best free AI tools](https://toolforge.io/blog/best-free-ai-tools-2026.html)
+- [Best AI tools on a budget](https://toolforge.io/blog/ai-tools-cheap-budget-2026.html)
+- [Best AI tools 2026 mega roundup](https://toolforge.io/blog/best-ai-tools-2026-mega-roundup.html)
+- [Productivity stack for 2026](https://toolforge.io/blog/ai-tools-productivity-stack-2026.html)
+- [AI tools vs hiring employees](https://toolforge.io/blog/ai-tools-vs-hiring-employees-2026.html)
+- [AI tools vs outsourcing](https://toolforge.io/blog/ai-tools-vs-outsourcing-2026.html): NEW
+- [AI vs human (which tasks to automate)](https://toolforge.io/blog/ai-tools-vs-human-2026.html)
+- [Best AI tools for startups](https://toolforge.io/blog/best-ai-tools-for-startups.html)
+
+## Optional
+
+### About
+- [About ToolForge](https://toolforge.io/about.html): Editorial standards and disclosure
+- [Contact](https://toolforge.io/contact.html): Get in touch
+
+### Crawler resources
+- [Sitemap](https://toolforge.io/sitemap.xml): Full sitemap of all pages
+- [RSS feed](https://toolforge.io/rss.xml): Subscribe to new content

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to ToolForge! — You're In</title>
+  <meta name="description" content="Thanks for subscribing to ToolForge weekly newsletter. Here's what to expect.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://toolforge.surge.sh/thank-you.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .success-hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: var(--space-9) 0; }
+    .success-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto var(--space-4); }
+    .next-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); margin-top: var(--space-5); max-width: 800px; margin-left: auto; margin-right: auto; }
+    .next-step { padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); text-align: left; }
+    .next-step-num { display: inline-block; width: 28px; height: 28px; background: var(--accent); color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 600; font-size: 13px; margin-bottom: var(--space-2); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">T</div>ToolForge</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Browse</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="success-hero">
+    <div class="container" style="text-align: center; max-width: 720px;">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 style="font-size: clamp(36px, 5vw, 56px); font-weight: 600; letter-spacing: -1.5px; margin-bottom: var(--space-3);">You're in! 🎉</h1>
+      <p style="font-size: 19px; color: var(--text-secondary); margin-bottom: var(--space-5); line-height: 1.5;">Welcome to the ToolForge weekly newsletter. Every Sunday, you'll get 5 new tools + 1 deep review — no spam, ever.</p>
+
+      <div class="next-steps">
+        <div class="next-step">
+          <span class="next-step-num">1</span>
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Check your inbox</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5;">Confirmation email is on its way. Click the link to verify.</p>
+        </div>
+        <div class="next-step">
+          <span class="next-step-num">2</span>
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Try the AI Picker</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5;">4 questions, get a personalized stack. <a href="tool-picker.html">Start here →</a></p>
+        </div>
+        <div class="next-step">
+          <span class="next-step-num">3</span>
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Bookmark our blog</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5;">30+ in-depth reviews and comparisons. <a href="blog.html">Read now →</a></p>
+        </div>
+        <div class="next-step">
+          <span class="next-step-num">4</span>
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Follow on X</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5;">Daily tool drops. <a href="https://twitter.com/toolforgeio" rel="noopener">@toolforgeio →</a></p>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-7);">
+        <a href="index.html" class="btn btn-primary btn-lg">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 ToolForge.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://toolforge.io/changelog.html">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a72ef'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>T</text></svg>">
   <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
   <style>
@@ -99,7 +100,7 @@
     </div>
   </nav>
 
-  <header style="padding: var(--space-8) 0 var(--space-5); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+  <header style="padding: var(--space-8) 0 var(--space-5); background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);" class="reveal">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);">
         <a href="index.html">Home</a> <span>/</span> <span>Changelog</span>
@@ -324,10 +325,14 @@
 
       <div style="text-align: center; margin-top: var(--space-7); padding: var(--space-5); background: var(--bg-elevated); border-radius: var(--radius-lg);">
         <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Want to be notified when we ship?</p>
-        <form class="newsletter-form" id="newsletter-form" style="max-width: 420px; margin: 0 auto;">
-          <input type="email" class="newsletter-input" placeholder="you@startup.com" required>
-          <button type="submit" class="newsletter-submit">Subscribe</button>
-        </form>
+        <form class="newsletter-form" action="https://formsubmit.co/vantjxrg@gmail.com" method="POST" style="max-width: 420px; margin: 0 auto;">
+            <input type="email" name="email" class="newsletter-input" placeholder="you@startup.com" required>
+            <input type="hidden" name="_subject" value="New ToolForge subscriber!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://toolforge.surge.sh/thank-you.html">
+            <button type="submit" class="newsletter-submit">Subscribe</button>
+          </form>
         <p style="font-size: 12px; color: var(--text-tertiary); margin-top: var(--space-3);">Or follow via <a href="rss.xml">RSS</a> · <a href="https://twitter.com/toolforgeio">Twitter</a></p>
       </div>
     </div>
