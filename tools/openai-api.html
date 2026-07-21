@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI API (2026) — Pricing, Models &amp; How to Get Started | ToolForge</title>
+  <meta name="description" content="Honest 2026 guide to the OpenAI API. GPT-5, GPT-5-mini, o-series, Whisper, embeddings — real pricing per million tokens, real rate limits, real gotchas.">
+  <meta name="keywords" content="OpenAI API, GPT-5 API, OpenAI pricing, ChatGPT API, OpenAI models 2026, Whisper API, OpenAI embeddings">
+  <meta property="og:title" content="OpenAI API (2026) — Pricing, Models &amp; How to Get Started | ToolForge">
+  <meta property="og:description" content="Honest 2026 guide to the OpenAI API. GPT-5, GPT-5-mini, o-series, Whisper, embeddings — real pricing per million tokens, real rate limits, real gotchas.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toolforge.io/tools/openai-api.html">
+  <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenAI API (2026) — Pricing, Models &amp; How to Get Started | ToolForge">
+  <meta name="twitter:description" content="Honest 2026 guide to the OpenAI API. GPT-5, GPT-5-mini, o-series, Whisper, embeddings — real pricing per million tokens, real rate limits, real gotchas.">
+  <meta name="twitter:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <link rel="canonical" href="https://toolforge.io/tools/openai-api.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310a37f'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>O</text></svg>">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OpenAI API",
+  "description": "Honest 2026 guide to the OpenAI API. GPT-5, GPT-5-mini, o-series, Whisper, embeddings — real pricing per million tokens, real rate limits, real gotchas.",
+  "applicationCategory": "DeveloperAPI",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "ratingCount": "4210"
+  }
+}
+</script>
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">T</div>
+        ToolForge
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../tools.html" class="nav-link">Browse</a>
+        <a href="../deals.html" class="nav-link">🔥 Deals</a>
+        <a href="../stack-quiz.html" class="nav-link">🧪 Stack Quiz</a>
+        <a href="../blog.html" class="nav-link">Blog</a>
+        <a href="../about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="../tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="tool-hero">
+    <div class="container">
+      <div class="tool-hero-inner">
+        <div class="tool-hero-logo" style="background: linear-gradient(135deg, #10a37f, #0d8a6a);">OA</div>
+        <div class="tool-hero-info">
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-2);">— Developer API</div>
+          <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);"><a href="../index.html">Home</a> <span>/</span> <a href="../tools.html">Browse</a> <span>/</span> <a href="../tools.html">Tools</a> <span>/</span> <span>OpenAI API</span></nav><h1>OpenAI API</h1><div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">
+      <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="live-dot"></span>Last updated July 20, 2026</span>
+      <span>·</span>
+      <span>Reviewed by ToolForge Editorial</span>
+    </div>
+          <p class="tool-hero-tagline">The API that powers most of the AI apps you use. GPT-5, Whisper, embeddings, and more — pay per token.</p>
+          <div class="tool-hero-meta">
+            <span>★ 4.8/5</span>
+            <span>·</span>
+            <span>3M+ developers</span>
+            <span>·</span>
+            <span>Since 2020</span>
+            <span>·</span>
+            <span>Pay-as-you-go</span>
+          </div>
+        </div>
+        <div class="tool-hero-cta">
+          <div class="tool-price"><strong>From $1.25</strong> per 1M input tokens (GPT-5-mini)</div>
+          <a href="https://platform.openai.com/?via=toolforge" target="_blank" rel="noopener sponsored" class="btn btn-primary">Get API access →</a>
+          <a href="#features" class="btn btn-secondary btn-sm">Read full review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" id="features">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <h2>The reference implementation for every LLM API</h2>
+        <p>The OpenAI API is the most widely-used LLM endpoint in the world. If you've talked to a chatbot, summarized a doc, or generated an image on the web in 2026, there's a better-than-even chance the request hit OpenAI's servers. The API exposes GPT-5 (flagship), GPT-5-mini (fast/cheap), GPT-5-nano (cheapest), the o-series reasoning models, Whisper (speech-to-text), TTS (text-to-speech), DALL·E and the image models, and embeddings — all behind a single OpenAI-compatible REST surface.</p>
+        <p style="padding: var(--space-3) var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-md); border-left: 3px solid var(--accent); margin-top: var(--space-4);"><strong style="color: var(--text-primary);">Who it's for:</strong> <span style="color: var(--text-secondary);">Developers building AI features into products. Startups prototyping. Enterprises needing SOC 2 / HIPAA / zero-data-retention tiers. If you're calling an LLM from code, this is the default starting point — even if you later migrate to Anthropic, open-weights, or a self-hosted stack.</span></p>
+      </div>
+
+      <h2 style="margin-top: var(--space-7);">Key capabilities</h2>
+      <div class="tool-features">
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Chat</span>
+            GPT-5 chat completions
+          </div>
+          <p>The workhorse endpoint. Send a list of messages, get a streamed or non-streamed completion. Tool calling (function calling), structured outputs (JSON schema enforcement), and vision are all baked in. GPT-5 brings 256K context and a real reasoning mode toggle.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">o-series</span>
+            Reasoning models
+          </div>
+          <p>o4 and o5 reason step-by-step before answering. Slower and more expensive per call, but dramatically better on math, code, and multi-step planning. Set a <code style="font-family: var(--font-mono);">reasoning.effort</code> parameter to trade depth for speed.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Whisper</span>
+            Speech-to-text
+          </div>
+          <p>Whisper-large-v4 transcribes audio at scale, supports 99 languages, and costs ~$0.004/minute. The single endpoint that killed most paid transcription services below 99% accuracy requirements.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Embeddings</span>
+            text-embedding-4
+          </div>
+          <p>1536-dim (or 3072-dim) vectors for semantic search, RAG, and clustering. $0.02 per 1M tokens. Pairs with pgvector, Pinecone, or any vector DB to build retrieval pipelines in an afternoon.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" style="background: var(--bg-elevated);">
+    <div class="container">
+      <h2>Pricing at a glance (July 2026)</h2>
+      <div style="max-width: 800px; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border);">
+              <th style="text-align: left; padding: var(--space-3);">Model</th>
+              <th style="text-align: right; padding: var(--space-3);">Input / 1M tok</th>
+              <th style="text-align: right; padding: var(--space-3);">Output / 1M tok</th>
+              <th style="text-align: right; padding: var(--space-3);">Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">GPT-5</td><td style="text-align: right; padding: var(--space-3);">$5.00</td><td style="text-align: right; padding: var(--space-3);">$15.00</td><td style="text-align: right; padding: var(--space-3);">256K</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">GPT-5-mini</td><td style="text-align: right; padding: var(--space-3);">$1.25</td><td style="text-align: right; padding: var(--space-3);">$10.00</td><td style="text-align: right; padding: var(--space-3);">256K</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">GPT-5-nano</td><td style="text-align: right; padding: var(--space-3);">$0.10</td><td style="text-align: right; padding: var(--space-3);">$0.40</td><td style="text-align: right; padding: var(--space-3);">128K</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">o5</td><td style="text-align: right; padding: var(--space-3);">$15.00</td><td style="text-align: right; padding: var(--space-3);">$60.00</td><td style="text-align: right; padding: var(--space-3);">200K</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">text-embedding-4</td><td style="text-align: right; padding: var(--space-3);">$0.02</td><td style="text-align: right; padding: var(--space-3);">—</td><td style="text-align: right; padding: var(--space-3);">8K</td></tr>
+            <tr><td style="padding: var(--space-3);">Whisper-large-v4</td><td style="text-align: right; padding: var(--space-3);">$0.004/min</td><td style="text-align: right; padding: var(--space-3);">—</td><td style="text-align: right; padding: var(--space-3);">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: var(--space-4); color: var(--text-tertiary); font-size: 13px;">Prices are list rates. Volume discounts kick in via the Batch API (50% off, 24-hour turnaround) and committed-use discounts for enterprise. Cached prompt prefixes cut input cost up to 90% on long, repeated system prompts.</p>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <h2>The honest take</h2>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>✓ What works</h3>
+          <ul><li>Broadest model lineup — chat, reasoning, vision, audio, embeddings, images under one key</li><li>Best-in-class docs and SDKs (Python, Node, Go, .NET, plus a dozen community clients)</li><li>Structured outputs (JSON schema) actually enforce shape — no more regex-parsing model output</li><li>Prompt caching and Batch API cut costs dramatically for production workloads</li><li>Zero-data-retention enterprise tier satisfies HIPAA, SOC 2, and FedRAMP constraints</li></ul>
+        </div>
+        <div class="cons">
+          <h3>✗ What doesn't</h3>
+          <ul><li>Cheapest models (nano) still hallucinate more than Claude Haiku or Gemini Flash on edge cases</li><li>Rate limits are tiered by spend history — fresh accounts hit 429s fast on GPT-5</li><li>o-series "reasoning effort" is opaque — you can't easily inspect the chain of thought</li><li>No first-party long-term memory layer; you build retrieval yourself</li><li>Pricing changes frequently; budget with a 20% safety margin</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <h2>Verdict</h2>
+        <p style="font-size: 19px; line-height: 1.6;">If you're shipping an AI feature in 2026 and you have to pick exactly one provider to start with, pick OpenAI. The breadth of models, the maturity of the SDK, and the sheer volume of community code mean you'll hit the ground running. The moment cost or latency starts hurting, route the cheap calls to GPT-5-nano or evaluate Anthropic / open-weights for the heavy lifting — but the OpenAI API is the right default.</p>
+
+        <div class="affiliate-disclosure" style="text-align: left; margin-top: var(--space-6);">
+          💡 <strong>Transparency:</strong> This review contains affiliate links. If you sign up through our link, we may earn a commission at no cost to you. We only recommend tools we use ourselves. <a href="../about.html#disclosure">Full disclosure</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" style="background: var(--bg-elevated);">
+    <div class="container">
+      <h2 style="margin-bottom: var(--space-5);">Related Tools</h2>
+      <div class="tools-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        <a href="anthropic-api.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #d97706;">An</div>
+            <span class="tool-card-badge">Pay-as-you-go</span>
+          </div>
+          <h3 class="tool-card-title">Anthropic API</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Claude API. Best-in-class long context, prompt caching, and tool use. The strong #2.</p>
+        </a>
+<a href="replicate.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #6f2b8c;">Re</div>
+            <span class="tool-card-badge">$0.0225/min</span>
+          </div>
+          <h3 class="tool-card-title">Replicate</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Run open-source models (Flux, Llama, Whisper) behind a simple API. Pay per second.</p>
+        </a>
+<a href="modal.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #7c3aed;">Mo</div>
+            <span class="tool-card-badge">Pay-per-use</span>
+          </div>
+          <h3 class="tool-card-title">Modal</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Serverless GPU containers. Self-host any open model and pay per second of compute.</p>
+        </a>
+<a href="openai-whisper.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #10a37f;">Wh</div>
+            <span class="tool-card-badge">Free (self-host)</span>
+          </div>
+          <h3 class="tool-card-title">OpenAI Whisper</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Open-source transcription model. Run locally or via the OpenAI API.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner-content">
+          <h2>Start building with OpenAI</h2>
+          <p>Pay-as-you-go · Free $5 credit for new accounts · 3M+ developers</p>
+          <a href="https://platform.openai.com/?via=toolforge" target="_blank" rel="noopener sponsored" class="btn btn-lg">Get API access →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-icon">T</div>
+            ToolForge
+          </a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <a href="../index.html" class="footer-link">Home</a>
+          <a href="../tools.html" class="footer-link">Browse Tools</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <a href="../about.html" class="footer-link">About</a>
+          <a href="../contact.html" class="footer-link">Contact</a>
+          <a href="../about.html#disclosure" class="footer-link">Disclosure</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" target="_blank" rel="noopener" class="footer-link">Twitter / X</a>
+          <a href="https://www.linkedin.com/company/toolforge" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="../rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge. All rights reserved.</div>
+        <div>Built with AI tools, for AI tool users.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

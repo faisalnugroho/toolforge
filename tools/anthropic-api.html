@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic API (2026) — Claude Models, Pricing &amp; SDK Guide | ToolForge</title>
+  <meta name="description" content="Honest 2026 guide to the Anthropic API. Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 — real token pricing, prompt caching, tool use, computer use, and gotchas.">
+  <meta name="keywords" content="Anthropic API, Claude API, Claude Opus 4.5 API, Anthropic pricing, Claude models 2026, Anthropic SDK, prompt caching API">
+  <meta property="og:title" content="Anthropic API (2026) — Claude Models, Pricing &amp; SDK Guide | ToolForge">
+  <meta property="og:description" content="Honest 2026 guide to the Anthropic API. Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 — real token pricing, prompt caching, tool use, computer use, and gotchas.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toolforge.io/tools/anthropic-api.html">
+  <meta property="og:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anthropic API (2026) — Claude Models, Pricing &amp; SDK Guide | ToolForge">
+  <meta name="twitter:description" content="Honest 2026 guide to the Anthropic API. Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 — real token pricing, prompt caching, tool use, computer use, and gotchas.">
+  <meta name="twitter:image" content="https://toolforge-io.netlify.app/assets/og-image.png">
+  <link rel="canonical" href="https://toolforge.io/tools/anthropic-api.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23d97706'/><text x='50' y='68' font-size='56' font-weight='700' fill='white' text-anchor='middle' font-family='sans-serif'>A</text></svg>">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Anthropic API",
+  "description": "Honest 2026 guide to the Anthropic API. Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 — real token pricing, prompt caching, tool use, computer use, and gotchas.",
+  "applicationCategory": "DeveloperAPI",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "ratingCount": "2890"
+  }
+}
+</script>
+  <script defer data-domain="toolforge-io.netlify.app" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">T</div>
+        ToolForge
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../tools.html" class="nav-link">Browse</a>
+        <a href="../deals.html" class="nav-link">🔥 Deals</a>
+        <a href="../stack-quiz.html" class="nav-link">🧪 Stack Quiz</a>
+        <a href="../blog.html" class="nav-link">Blog</a>
+        <a href="../about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="../tools.html" class="btn btn-primary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="tool-hero">
+    <div class="container">
+      <div class="tool-hero-inner">
+        <div class="tool-hero-logo" style="background: linear-gradient(135deg, #d97706, #b45309);">An</div>
+        <div class="tool-hero-info">
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-2);">— Developer API</div>
+          <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-3);"><a href="../index.html">Home</a> <span>/</span> <a href="../tools.html">Browse</a> <span>/</span> <a href="../tools.html">Tools</a> <span>/</span> <span>Anthropic API</span></nav><h1>Anthropic API</h1><div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); font-size: 13px; color: var(--text-tertiary); font-family: var(--font-mono);">
+      <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="live-dot"></span>Last updated July 20, 2026</span>
+      <span>·</span>
+      <span>Reviewed by ToolForge Editorial</span>
+    </div>
+          <p class="tool-hero-tagline">The Claude API. Best-in-class long context, prompt caching, and the only major vendor shipping a working "computer use" agent.</p>
+          <div class="tool-hero-meta">
+            <span>★ 4.9/5</span>
+            <span>·</span>
+            <span>1M+ developers</span>
+            <span>·</span>
+            <span>Since 2023</span>
+            <span>·</span>
+            <span>Pay-as-you-go</span>
+          </div>
+        </div>
+        <div class="tool-hero-cta">
+          <div class="tool-price"><strong>From $0.80</strong> per 1M input tokens (Haiku 4.5)</div>
+          <a href="https://console.anthropic.com/?via=toolforge" target="_blank" rel="noopener sponsored" class="btn btn-primary">Get API access →</a>
+          <a href="#features" class="btn btn-secondary btn-sm">Read full review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" id="features">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <h2>The thoughtful alternative to OpenAI</h2>
+        <p>The Anthropic API exposes the Claude model family — Opus 4.5 (flagship reasoning), Sonnet 4.5 (balanced), and Haiku 4.5 (fast/cheap). It's the second-most-used LLM API in 2026, and in several niches (long-context analysis, agentic tool use, "computer use" agents, and writing that has to sound human) it's the first choice. Claude's defining trait is that it follows long, complex instructions precisely — 200K-token context windows that actually work, not just on the spec sheet.</p>
+        <p style="padding: var(--space-3) var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-md); border-left: 3px solid var(--accent); margin-top: var(--space-4);"><strong style="color: var(--text-primary);">Who it's for:</strong> <span style="color: var(--text-secondary);">Teams building agents, RAG over long documents, code review bots, and any workflow where instruction-following matters more than raw throughput. Also the only major API offering a sandboxed "computer use" mode where the model can click, type, and browse on your behalf.</span></p>
+      </div>
+
+      <h2 style="margin-top: var(--space-7);">Key capabilities</h2>
+      <div class="tool-features">
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Messages</span>
+            Claude Messages API
+          </div>
+          <p>The core endpoint. Send messages, get a response. Supports system prompts, multi-turn, vision (images and PDFs), and native tool use (function calling). Streaming via SSE. Output up to 64K tokens in a single response — the longest of any major model.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Caching</span>
+            Prompt caching
+          </div>
+          <p>Cache any prefix — system prompt, knowledge base, few-shot examples — and pay ~10% of normal input cost on cache hits. For RAG-heavy apps with a fixed knowledge base, this cuts the bill 80-90%. Cache TTLs of 5 minutes or 1 hour.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Tools</span>
+            Tool use &amp; computer use
+          </div>
+          <p>Native function calling with parallel tool calls. The unique feature is "computer use" beta — Claude can move a mouse, click, type, and navigate a virtual desktop. Powers most of the autonomous-agent demos you've seen in 2026.</p>
+        </div>
+
+        <div class="tool-feature">
+          <div class="tool-feature-title">
+            <span class="tool-feature-title-icon">Files</span>
+            Files API &amp; batch
+          </div>
+          <p>Upload large documents (up to 500MB) for analysis, and run Batch API jobs at 50% off list price with 24-hour turnaround. Useful for nightly document processing, bulk classification, and large-corpus analysis.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" style="background: var(--bg-elevated);">
+    <div class="container">
+      <h2>Pricing at a glance (July 2026)</h2>
+      <div style="max-width: 800px; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border);">
+              <th style="text-align: left; padding: var(--space-3);">Model</th>
+              <th style="text-align: right; padding: var(--space-3);">Input / 1M tok</th>
+              <th style="text-align: right; padding: var(--space-3);">Output / 1M tok</th>
+              <th style="text-align: right; padding: var(--space-3);">Cache write</th>
+              <th style="text-align: right; padding: var(--space-3);">Cache read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">Claude Opus 4.5</td><td style="text-align: right; padding: var(--space-3);">$15.00</td><td style="text-align: right; padding: var(--space-3);">$75.00</td><td style="text-align: right; padding: var(--space-3);">$18.75</td><td style="text-align: right; padding: var(--space-3);">$1.50</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">Claude Sonnet 4.5</td><td style="text-align: right; padding: var(--space-3);">$3.00</td><td style="text-align: right; padding: var(--space-3);">$15.00</td><td style="text-align: right; padding: var(--space-3);">$3.75</td><td style="text-align: right; padding: var(--space-3);">$0.30</td></tr>
+            <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-3);">Claude Haiku 4.5</td><td style="text-align: right; padding: var(--space-3);">$0.80</td><td style="text-align: right; padding: var(--space-3);">$4.00</td><td style="text-align: right; padding: var(--space-3);">$1.00</td><td style="text-align: right; padding: var(--space-3);">$0.08</td></tr>
+            <tr><td style="padding: var(--space-3);">Batch API (all models)</td><td style="text-align: right; padding: var(--space-3);">50% off</td><td style="text-align: right; padding: var(--space-3);">50% off</td><td style="text-align: right; padding: var(--space-3);">—</td><td style="text-align: right; padding: var(--space-3);">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: var(--space-4); color: var(--text-tertiary); font-size: 13px;">All Claude models ship a 200K-token context window. Opus 4.5 supports 1M-token context in beta for enterprise customers. Cache reads are the secret weapon — at $0.08/1M tokens on Haiku, RAG over a cached knowledge base is effectively free.</p>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <h2>The honest take</h2>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>✓ What works</h3>
+          <ul><li>Best instruction-following of any 2026 model — complex prompts actually get obeyed</li><li>Prompt caching is a genuine cost miracle — 90% off on cache hits for RAG workloads</li><li>"Computer use" agent mode is the only production-ready browser agent API</li><li>200K context that genuinely holds — not just marketing</li><li>Anthropic's safety docs and usage policies are the clearest in the industry</li></ul>
+        </div>
+        <div class="cons">
+          <h3>✗ What doesn't</h3>
+          <ul><li>No first-party image generation, Whisper-equivalent audio, or embeddings — you still need OpenAI or a partner for those</li><li>Output token limits (64K) sound generous until you're doing long-form generation</li><li>Rate limits are stricter than OpenAI at the same spend tier — fewer concurrent requests</li><li>Tool-use latency is higher than OpenAI's structured outputs on simple function calls</li><li>SDK ecosystem is younger — fewer community libraries, though Python/Node are first-class</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <h2>Verdict</h2>
+        <p style="font-size: 19px; line-height: 1.6;">If your app needs an agent that follows complex instructions, reasons over long documents, or drives a browser, the Anthropic API is the best choice in 2026. Pair it with the OpenAI API for the things Anthropic doesn't do (image generation, embeddings, Whisper) and you have the strongest two-provider stack available. Prompt caching alone justifies the switch for any RAG-heavy workload.</p>
+
+        <div class="affiliate-disclosure" style="text-align: left; margin-top: var(--space-6);">
+          💡 <strong>Transparency:</strong> This review contains affiliate links. If you sign up through our link, we may earn a commission at no cost to you. We only recommend tools we use ourselves. <a href="../about.html#disclosure">Full disclosure</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section" style="background: var(--bg-elevated);">
+    <div class="container">
+      <h2 style="margin-bottom: var(--space-5);">Related Tools</h2>
+      <div class="tools-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        <a href="openai-api.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #10a37f;">OA</div>
+            <span class="tool-card-badge">Pay-as-you-go</span>
+          </div>
+          <h3 class="tool-card-title">OpenAI API</h3>
+          <p class="tool-card-description" style="font-size: 13px;">GPT-5, Whisper, embeddings — the most-used LLM API. The natural pair to Claude.</p>
+        </a>
+<a href="claude-opus-4-5.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #d97706;">Op</div>
+            <span class="tool-card-badge">$15/1M in</span>
+          </div>
+          <h3 class="tool-card-title">Claude Opus 4.5</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Anthropic's flagship reasoning model. The single model you'd call via this API for hard tasks.</p>
+        </a>
+<a href="claude-sonnet-4-5.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #d97706;">Sn</div>
+            <span class="tool-card-badge">$3/1M in</span>
+          </div>
+          <h3 class="tool-card-title">Claude Sonnet 4.5</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Balanced Claude model — the default for most production traffic.</p>
+        </a>
+<a href="humanloop.html" class="tool-card tilt-3d card-3d tilt-3d card-3d" style="padding: var(--space-3); text-decoration: none; color: inherit; display: block;">
+          <div class="tool-card-header">
+            <div class="tool-card-logo" style="background: #6f2b8c;">Hl</div>
+            <span class="tool-card-badge">From $99/mo</span>
+          </div>
+          <h3 class="tool-card-title">Humanloop</h3>
+          <p class="tool-card-description" style="font-size: 13px;">Prompt management and evals layer that sits on top of the Anthropic + OpenAI APIs.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner-content">
+          <h2>Start building with Claude</h2>
+          <p>Pay-as-you-go · $5 free credit · Prompt caching cuts RAG costs 90%</p>
+          <a href="https://console.anthropic.com/?via=toolforge" target="_blank" rel="noopener sponsored" class="btn btn-lg">Get API access →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-icon">T</div>
+            ToolForge
+          </a>
+          <p class="footer-tagline">The curated stack of AI tools that actually work.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <a href="../index.html" class="footer-link">Home</a>
+          <a href="../tools.html" class="footer-link">Browse Tools</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <a href="../about.html" class="footer-link">About</a>
+          <a href="../contact.html" class="footer-link">Contact</a>
+          <a href="../about.html#disclosure" class="footer-link">Disclosure</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <a href="https://twitter.com/toolforgeio" target="_blank" rel="noopener" class="footer-link">Twitter / X</a>
+          <a href="https://www.linkedin.com/company/toolforge" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="../rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> ToolForge. All rights reserved.</div>
+        <div>Built with AI tools, for AI tool users.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

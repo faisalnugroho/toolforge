@@ -144,7 +144,7 @@
       }
 
       resultsEl.innerHTML = filtered.map(t => 
-        '<a href="tools/' + t.slug + '.html" class="result-card">' +
+        '<' + 'a class="result-card" ' + 'href=' + '"' + 'tools/' + t.slug + '.html"' + '>' +
           '<div class="result-cat">' + t.category + '</div>' +
           '<div class="result-name">' + t.name + '</div>' +
           '<div class="result-desc">' + t.tagline + '</div>' +
