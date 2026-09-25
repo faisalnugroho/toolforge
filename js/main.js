@@ -125,7 +125,7 @@ function showCookieBanner() {
     </div>
     <div class="cookie-banner-content">
       <div class="cookie-banner-title">Cookies on ToolForge</div>
-      <div class="cookie-banner-text">We use cookies for analytics (Plausible) and preferences. <a href="privacy.html">Privacy policy</a>.</div>
+      <div class="cookie-banner-text">We use cookies for analytics (Plausible) and preferences. <a href="/privacy.html">Privacy policy</a>.</div>
     </div>
     <div class="cookie-banner-actions">
       <button class="primary">Accept</button>
